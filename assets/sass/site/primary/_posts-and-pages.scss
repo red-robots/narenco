@@ -1,104 +1,248 @@
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0 0 1.5em;
-}
-
-.byline,
-.updated:not(.published){
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-.faqrow {
-	width: auto;
-	overflow: hidden;
-	margin: 0 0 20px 0;	
-	background-color: rgba(255,255,255,.05);
-	border-radius: 10px;
-}
-.question {
-	width: auto;
-	float:left;
-	margin: 10px;
-	font-weight: bold;
-	font-size: 20px;
-	cursor:pointer;	
-	line-height: 1.3;
+#page {
+	overflow-y: scroll;
+	overflow-x: hidden;
 	position: relative;
-	padding: 0 0 0 20px ;
 }
-.question-image {
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	left: 0px;
-	top: 3px;
-	background-image: url(images/faq.png);
-	background-repeat: no-repeat;
-	background-position: 0 0;	
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
 }
-.question-image.close {
-	background-position: -15px 0;	
-}
-.answer {
+.banner-wrapper {
 	width: 100%;
-	float:left;
-	margin: 10px;
-	font-size: 14px;
-	line-height: 1.3;
-	padding: 0 0 0 40px;
-	display:none;
+	height: 480px;
+	position: relative;
+	height: 100vh;
+	max-height: 1065px;
+	background-size: cover;
+	background-attachment: fixed;
+	img {
+		width: 100%;
+		height: auto;
+		display: none;
+		@media screen and (min-width: $midwidth) {
+			display: none
+		}
+	}
 }
-.plus-minus-toggle {
-    cursor: pointer;
-    height: 21px;
-    position: absolute;
-    width: 21px;
-    left:-10px;
-    top:40%;
-    z-index:2;
-
-    &:before,
-    &:after {
-      background: #eee;
-      content: '';
-      height: 5px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 21px;
-      transition: transform 500ms ease;
-    }
-
-    &:after {
-      transform-origin: center;
-    }
-
-    &.collapsed {
-      &:after {
-        transform: rotate(90deg);
-
-      }
-
-      &:before {
-        transform: rotate(180deg);
-      }
-    }
+.banner-caption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	color: #FFF;
+	.inside {
+		position: relative;
+		top: 52%;
+		transform: translateY(-52%);
+		text-align: center;
+		margin: 0 auto;
+		width: 80%;
+		@media screen and (min-width: $midwidth) {
+			width: 70%;
+			top: 55%;
+			transform: translateY(-55%);
+			width: 70%;
+		}
+		@media screen and (min-width: $deskwidth) {
+			width: 50%;
+		}
+	}
+	.tagline1 {
+		margin: 0 0 18px;
+		font-size: 35px;
+		line-height: 1.1;
+		font-weight: 200;
+		b {
+			font-weight: 500;
+		}
+		@media screen and (min-width: $midwidth) {
+			font-size: 70px;
+		}
+	}
+	.tagline2 {
+		margin: 0 0;
+		font-weight: 200;
+		font-size: 18px;
+		line-height: 1.2;
+		@media screen and (min-width: $midwidth) {
+			font-size: 25px;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
 }
+.section-title {
+	margin: 0 0;
+	font-size: 35px;
+	font-weight: 200;
+	line-height: 1.2;
+	@media screen and (min-width: $midwidth) {
+		font-size: 45px;
+	}
+}
+.introdiv {
+	background: #231bcc;
+	background: -moz-linear-gradient(left, #231bcc 0%, #3497fe 100%);
+	background: -webkit-linear-gradient(left, #231bcc 0%,#3497fe 100%);
+	background: linear-gradient(to right, #231bcc 0%,#3497fe 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#231bcc', endColorstr='#3497fe',GradientType=1 );
+	color: #FFF;
+	.section-title {
+		display: block;
+		text-align: center;
+		width: 90%;
+		margin: 60px auto 30px;
+		b {
+			font-weight: 500;
+			color: $color-lime-green;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 50%;
+		}
+	}
+	.small-text {
+		margin: 0 auto;
+		width: 90%;
+		text-align: center;
+		font-size: 18px;
+		font-weight: 200;
+		@media screen and (min-width: $midwidth) {
+			width: 60%;
+		}
+		p {
+			margin-top: 0;
+			margin-bottom: 1.5em;
+		}
+	}
+}
+.introdiv .buttondiv {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 80px;
+	a {
+		display: inline-block;
+		text-decoration: none;
+		background: #FFF;
+		font-size: 18px;
+		font-weight: 300;
+		padding: 6px 35px;
+		color: $color-blue;
+		@include transition (all ease-out .3s);
+		&:hover {
+			background: $color-lime-green;
+			color: #FFF;
+		}
+	}
+}
+.statistics {
+	width: 90%;
+	margin: 0 auto;
+	@media screen and (min-width: $midwidth) {
+		width: 70%;
+		margin: 0 auto;
+	}
+	.row {
+		@include flexbox();
+		@include flexbox-wrap(wrap);
+		@include flexbox-align-content(top);
+		@include flexbox-align-items(top);
+		@include flexbox-direction(row);
+	}
+	.stat {
+		width: 100%;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 1;
+		height: 220px;
+		position: relative;
+		margin: 0 auto 50px;
+		@media screen and (min-width: $midwidth) {
+			width: 50%;
+		}
+	}
+	.stat .inside {
+		padding:0 30px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	.number {
+		position: relative;
+		bottom: -6px;
+		left: 10px;
+	}
+	.number span {
+		position: relative;
+	}
+	.num {
+		font-size: 62px;
+		font-weight: 600;
+	}
+	.append {
+		color: $color-lime-green;
+		left: -2px;
+	}
+	.append.ktext {
+		font-size: 70px;
+		font-weight: 200;
+	}
+	.append.plus {
+		font-size: 63px;
+		font-weight: 600;
+	}
+	.toptext {
+		display: inline-block;
+		width: 175px;
+	}
+	.statdesc {
+		font-size: 18px;
+		font-weight: 200;
+		line-height: 1.3;
+		border-top: 4px solid $color-lime-green;
+		margin-top: 10px;
+    	padding-top: 10px;
+	}
+	.secondary_stat {
+		font-size: 75px;
+		font-weight: 200;
+		position: relative;
+	}
+	.stat.no-secondary {
+		height: 150px;
+		@media screen and (min-width: $midwidth) {
+			height: 220px;
+		}
+		.number {
+			margin-bottom: 25px;
+			@media screen and (min-width: $midwidth) {
+				margin-bottom: 40px;
+			}
+		}
+	}
+	.stat.green .secondary_stat {
+		color: $color-lime-green;
+		@media screen and (min-width: $midwidth) {
+			font-size: 65px;
+		}
+	}
+}
+.projects_description {
+	font-size: 30px;
+	font-weight: 200;
+	color: $color-grey;
+	line-height: 1.2;
+	text-align: center;
+	@media screen and (min-width: $midwidth) {
+		font-size: 45px;
+		.wrapper {
+			width: 85%;
+		}
+	}
+	b {
+		font-weight: 600;
+	}
+}
+

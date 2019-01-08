@@ -19,10 +19,11 @@ function my_login_logo() {
     body.login div#login h1 a {
       <?php if($logo_url) { ?>
         background-image: url(<?php echo $logo_url; ?>);
+        background-size: contain;
+        background-color: #318dc1;
+        width: 100%;
+        height: 67px;
       <?php } ?> 
-      background-size: contain;
-      width: 100%;
-      height: 67px;
     }
   </style>
 <?php }

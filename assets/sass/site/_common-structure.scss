@@ -1,22 +1,26 @@
-* { -webkit-hyphens: none; }
-div {
-	/* These are technically the same, but use both */
-	overflow-wrap: break-word;
-	word-wrap: break-word;
+*,div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
+	 overflow-wrap: normal;
+    word-wrap: normal;
 
-	-ms-word-break: break-all;
-	/* This is the dangerous one in WebKit, as it breaks things wherever */
-	word-break: break-all;
-	/* Instead use this non-standard one: */
-	word-break: break-word;
+    -ms-word-break: normal;
+    word-break: normal;
+    word-break: normal;
 
-	/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	-ms-hyphens: auto;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
+    -ms-hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    hyphens: none;
+    page-break-inside: avoid;
 }
-.clear {clear: both;}
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.wrapper, .clear {clear: both;}
+.wrapper:before, .wrapper:after, .clear:before,.clear:after {content: " "; display: table; }
+.wrapper:after, .clear:after {clear: both;}
+.wrapper, .clear {*zoom: 1;}
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
@@ -60,32 +64,71 @@ div {
 }
 
 /* Logo */
-.logo , h1.logo {
-	width: 300px;
-	background-image: url(images/logo.png);	
-	margin: 10px auto;
-
+.logo {
+	display: block;
+	width: 100px;
+	position: relative;
+	z-index: 20;
+	float: none;
+	margin: 0 0;
 	@media screen and (min-width: $tabwidth) {
-		width: 300px;
+		width: 120px;
 		float: left;
-		margin: 0;
+		margin: 0 0;
 	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+	@media screen and (min-width: $midwidth) {
+		width: 185px;
 	}
 }
-.logo a, h1.logo a {
-	width: 300px;
-	display: block;
-
+.home .logo {
+	width: 120px;
+	margin: 5% auto 0;
 	@media screen and (min-width: $tabwidth) {
-		width: 300px;
+		width: 120px;
+		margin: 0 0;
 	}
-	@media screen and (min-width: $deskwidth) {
-		/*width: 1200px;*/
+	@media screen and (min-width: $midwidth) {
+		width: 185px;
+	}
+}
+.logo a {
+	display: block;
+	width: 100%;
+	float: left;
+	img {
+		width: 100%;
+		height: auto;
+		float: left;
 	}
 }
 .site-footer {
 	width: 100%;
 	clear: both;
+}
+#masthead {
+	position: relative;
+	background-color: $color-sky-blue;
+	.wrapper {
+		position: relative;
+		margin-top: 15px;
+		margin-bottom: 20px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+.home #masthead {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	background-color: transparent;
+	.wrapper {
+		margin-top: 20px;
+		margin-bottom: 0;
+		@media screen and (min-width: $tabwidth) {
+			margin-top: 35px;
+			margin-bottom: 35px;
+		}
+	}
 }
