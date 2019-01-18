@@ -80,36 +80,17 @@ function js_custom_init() {
 // Add new taxonomy, make it hierarchical (like categories)
 add_action( 'init', 'ii_custom_taxonomies', 0 );
 function ii_custom_taxonomies() {
-        $posts = array(
-            array(
-                'post_type' => 'position',
-                'menu_name' => 'Categories',
-                'plural'    => 'Assignment Categories',
-                'single'    => 'Category',
-                'taxonomy'  => 'position_categories'
-            ),
-            array(
-                'post_type' => 'position',
-                'menu_name' => 'Focus Areas',
-                'plural'    => 'Focus Areas',
-                'single'    => 'Focus Area',
-                'taxonomy'  => 'focus_area'
-            ),
-            array(
-                'post_type' => 'position',
-                'menu_name' => 'Status',
-                'plural'    => 'Status',
-                'single'    => 'Status',
-                'taxonomy'  => 'status'
-            ),
-            array(
-                'post_type' => 'team',
-                'menu_name' => 'Team Type',
-                'plural'    => 'Team Type',
-                'single'    => 'Category',
-                'taxonomy'  => 'team_type'
-            ),
-        );
+    $posts = array();
+    $posts = array(
+        array(
+            'post_type' => 'projects',
+            'menu_name' => 'Categories',
+            'plural'    => 'Project Categories',
+            'single'    => 'Project Category',
+            'taxonomy'  => 'project_categories',
+            'show_admin_column' => TRUE
+        ),
+    );
     
     if($posts) {
         foreach($posts as $p) {
@@ -118,7 +99,7 @@ function ii_custom_taxonomies() {
             $plural_name = ( isset($p['plural']) && $p['plural'] ) ? $p['plural'] : "Custom Post"; 
             $menu_name = ( isset($p['menu_name']) && $p['menu_name'] ) ? $p['menu_name'] : $p['plural'];
             $taxonomy = ( isset($p['taxonomy']) && $p['taxonomy'] ) ? $p['taxonomy'] : "";
-            
+            $show_admin_column = ( isset($p['show_admin_column']) && $p['show_admin_column'] ) ? true : false;
             
             if( $taxonomy && $p_type ) {
                 $labels = array(
@@ -133,15 +114,18 @@ function ii_custom_taxonomies() {
                     'update_item' => __( 'Update ' . $single_name ),
                     'add_new_item' => __( 'Add New ' . $single_name ),
                     'new_item_name' => __( 'New ' . $single_name ),
-                  );
+                );
 
-              register_taxonomy($taxonomy,array($p_type), array(
-                'hierarchical' => true,
-                'labels' => $labels,
-                'show_ui' => true,
-                'query_var' => true,
-                'rewrite' => array( 'slug' => $taxonomy ),
-              ));
+                register_taxonomy($taxonomy,$p_type, array(
+                    'hierarchical' => true,
+                    'labels' => $labels,
+                    'query_var'=>true,
+                    'show_ui' => true,
+                    'rewrite' => array( 'slug' => $taxonomy ),
+                    'show_admin_column'=>$show_admin_column,
+                    'public' => true,
+                    '_builtin' => true
+                ));
             }
             
         }
@@ -155,17 +139,21 @@ function set_custom_cpt_columns($columns) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='position') {
-        unset( $columns['date'] );
-        $columns['status'] = __( 'Assignment Status', 'acstarter' );
-        $columns['date'] = __( 'Date', 'acstarter' );
-    }
-    
     if($post_type=='team') {
         unset( $columns['date'] );
         $columns['photo'] = __( 'Photo', 'acstarter' );
         $columns['date'] = __( 'Date', 'acstarter' );
     }
+
+    if($post_type=='projects') {
+        unset( $columns['date'] );
+        unset( $columns['taxonomy-project_categories'] );
+        $columns['photo'] = __( 'Photo', 'acstarter' );
+        $columns['taxonomy-project_categories'] = __( 'Categories', 'acstarter' );
+        $columns['date'] = __( 'Date', 'acstarter' );
+    }
+    
+    
     
     return $columns;
 }
@@ -177,30 +165,6 @@ function custom_post_column( $column, $post_id ) {
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
     
-    if($post_type=='position') {
-        switch ( $column ) {
-            case 'status' :
-                $terms = get_the_terms($post_id,'status');
-//                $status = get_field('assignment_status',$post_id);
-//                if($status) {
-//                    echo ucwords($status);
-//                }
-//                else {
-//                    echo 'N/A';
-//                }
-                
-                $status_info = '';
-                if($terms) {
-                    $i=1; foreach($terms as $ss) {
-                        $comma = ($i>1) ? ', ':'';
-                        $status_info .= $comma . $ss->name;
-                        $i++;
-                    }
-                }
-                echo ($status_info) ? $status_info : '--';
-                break;
-        }
-    }
     
     if($post_type=='team') {
         switch ( $column ) {
@@ -212,6 +176,23 @@ function custom_post_column( $column, $post_id ) {
                    $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
                 } else {
                     $the_photo .= '<i class="dashicons dashicons-businessman" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
+                }
+                $the_photo .= '</span>';
+                echo $the_photo;
+        }
+    }
+
+    if($post_type=='projects') {
+        switch ( $column ) {
+            case 'photo' :
+                $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+                $img = wp_get_attachment_image_src($post_thumbnail_id,'medium');
+                $img_src = ($img) ? $img[0] : '';
+                $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
+                if($img_src) {
+                   $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
+                } else {
+                    $the_photo .= '<i class="dashicons dashicons-format-image" style="font-size:33px;position:relative;top:8px;left:-6px;opacity:0.3;"></i>';
                 }
                 $the_photo .= '</span>';
                 echo $the_photo;
