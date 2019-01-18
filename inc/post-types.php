@@ -84,7 +84,7 @@ function ii_custom_taxonomies() {
     $posts = array(
         array(
             'post_type' => 'projects',
-            'menu_name' => 'Categories',
+            'menu_name' => 'Project Categories',
             'plural'    => 'Project Categories',
             'single'    => 'Project Category',
             'taxonomy'  => 'project_categories',
