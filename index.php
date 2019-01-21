@@ -204,7 +204,7 @@ get_header(); ?>
 						<?php } ?>
 
 						<?php if($what_we_do_box_title || $what_we_do_description) { ?>
-							<div class="service-info whatwedo text-center animated zoomIn wow" data-wow-delay="1s">
+							<div class="service-info whatwedo text-center animated zoomIn wow" data-wow-delay=".8s">
 								<div class="inside clear">
 									<div class="textwrap clear">
 										<div class="align-mid">
