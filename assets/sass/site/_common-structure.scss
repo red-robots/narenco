@@ -17,6 +17,11 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+body {
+	color: $color-grey;
+	font-size: 14px;
+	line-height: 1.4;
+}
 .wrapper, .clear {clear: both;}
 .wrapper:before, .wrapper:after, .clear:before,.clear:after {content: " "; display: table; }
 .wrapper:after, .clear:after {clear: both;}
@@ -24,7 +29,7 @@
 .wrapper {
 	width: 100%;
 	margin: 0px auto;
-	padding: 20px;
+	padding: 0 20px;
 	
 	@media screen and (min-width: $tabwidth) {
 		width: 100%;
@@ -34,7 +39,16 @@
 		padding: 0px;
 	}
 }
+.midwrapper {
+	@media screen and (min-width: $midwidth) {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
 
+.text-center {text-align: center;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
 .content-area {
 	width: 100%;
 	margin: 0px auto;
@@ -131,4 +145,7 @@
 			margin-bottom: 35px;
 		}
 	}
+}
+.default-temp {
+	min-height:25em;
 }

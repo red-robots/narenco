@@ -24,6 +24,7 @@
 <?php wp_head(); 
 $is_home_page = ( is_front_page() || is_home() ) ? true : false;
 $classes[] = ( $is_home_page ) ? 'homepage':'subpage';
+$logo = get_custom_logo();
 ?>
 </head>
 
@@ -35,19 +36,15 @@ $classes[] = ( $is_home_page ) ? 'homepage':'subpage';
 	</div>
 	<header id="masthead" class="site-header clear" role="banner">
 		<div class="wrapper">
-			<?php if(is_home()) { ?>
-	            <h1 class="logo">
-		            <a href="<?php bloginfo('url'); ?>">
-		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-		            </a>
-	            </h1>
-	        <?php } else { ?>
-	            <div class="logo">
-	            	<a href="<?php bloginfo('url'); ?>">
-		            	<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>">
-		            </a>
-	            </div>
-	        <?php } ?>
+			<div class="logo">
+                <?php if($logo) { ?>
+                    <?php echo $logo; ?>
+                <?php } else { ?>
+                    <a class="siteLogo" href="<?php bloginfo('url'); ?>">
+                        <span><?php bloginfo('name'); ?></span>
+                    </a>
+                <?php } ?>
+            </div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>

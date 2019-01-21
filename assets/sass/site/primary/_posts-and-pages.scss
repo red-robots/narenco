@@ -109,7 +109,7 @@
 		font-size: 18px;
 		font-weight: 200;
 		@media screen and (min-width: $midwidth) {
-			width: 60%;
+			width: 80%;
 		}
 		p {
 			margin-top: 0;
@@ -235,14 +235,396 @@
 	color: $color-grey;
 	line-height: 1.2;
 	text-align: center;
+	margin: 14px auto 10px;
 	@media screen and (min-width: $midwidth) {
 		font-size: 45px;
-		.wrapper {
-			width: 85%;
-		}
+		width: 80%;
 	}
 	b {
 		font-weight: 600;
 	}
 }
 
+.featured-projects {
+	.row {
+		margin-left: -13px;
+		margin-right: -13px;
+		@include flexbox();
+		@include flexbox-direction(row);
+		@include flexbox-wrap(wrap);
+		@include flexbox-justify(center);
+	}
+	.box {
+		cursor: pointer;
+		display: block;
+		position: relative;
+		margin-bottom: 26px;
+		text-align: center;
+		width: 100%;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			float: left;
+		}
+		@media screen and (min-width: $midwidth) {
+			width: 33.333%;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.box span {
+		display: block;
+	}
+	.inside {
+		padding: 0 13px;
+		position: relative;
+		box-sizing: border-box;
+		height: 100%;
+	}
+	.imagewrap {
+		width: 100%;
+		height: 100%;
+		position: relative;
+	}
+	.imagewrap:before {
+		content:"";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: rgba(102,102,102,.8);
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+	}
+	.projectname {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		z-index: 10;
+		font-size: 28px;
+		font-weight: 200;
+		color: #FFF;
+		line-height: 1.2;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 30px;
+		}
+		@media screen and (min-width: $midwidth) {
+			font-size: 35px;
+		}
+	}
+	.size {
+		font-size: 22px;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 25px;
+		}
+		@media screen and (min-width: $midwidth) {
+			font-size: 28px;
+		}
+	}
+	.category {
+		cursor: pointer;
+		opacity: 0;
+		visibility: hidden;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 15;
+		background: #52913d;
+		background: -moz-linear-gradient(-45deg, #52913d 0%, #8cbc3e 100%);
+		background: -webkit-linear-gradient(-45deg, #52913d 0%,#8cbc3e 100%);
+		background: linear-gradient(135deg, #52913d 0%,#8cbc3e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#52913d', endColorstr='#8cbc3e',GradientType=1 );
+		@include transition(all ease-out .3s);
+	}
+	.cat-inner {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+		box-sizing: border-box;
+	}
+	.category i {
+		display: inline-block;
+		font-style: normal;
+		border-left: 1px solid #FFF;
+		padding-left: 10px;
+		padding-right: 8px;
+		color: #FFF;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 200;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 23px;
+		}
+	}
+	.category i:first-child {
+		border-left: none;
+	}
+	.category .readmore {
+		display: inline-block;
+		font-style: normal;
+		background: #FFF;
+		color: #52903d;
+		font-weight: 200;
+		font-size: 20px;
+		padding: 8px 18px;
+	}
+	.button {
+		margin-top: 10px;
+	}
+	.box:hover .category {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.second-description {
+	text-align: center;
+	color: $color-grey;
+	font-size: 18px;
+	font-weight: 300;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	@media screen and (min-width: $midwidth) {
+		width: 90%;
+		margin: 20px auto 20px;
+	}
+}
+.project-button {
+	text-align: center;
+	margin-bottom: 70px;
+	.projbutton {
+		display: inline-block;
+		background: $color-grey;
+		color: #FFF;
+		text-decoration: none;
+		padding: 5px 25px;
+		font-size: 20px;
+		font-weight: 300;
+		@include transition(all ease-out .3s);
+		&:hover {
+			background: $color-lime-green;
+		}
+	}
+}
+
+.services-section {
+	color: #FFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: #4b8a3e;
+	background: -moz-linear-gradient(left, #4b8a3e 0%, #a1cc3e 100%);
+	background: -webkit-linear-gradient(left, #4b8a3e 0%,#a1cc3e 100%);
+	background: linear-gradient(to right, #4b8a3e 0%,#a1cc3e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b8a3e', endColorstr='#a1cc3e',GradientType=1 );
+	.section-title b {
+		color: #163cc3;
+		font-weight: 700;
+	}
+}
+.services-section {
+	padding-left: 30px;
+	padding-right: 30px;
+	.secondary-text {
+		margin: 60px 0 50px;
+		font-weight: 200;
+		font-size: 20px;
+		@media screen and (min-width: $deskwidth) {
+			margin-top: 80px;
+		}
+	}
+}
+.services-list {
+	@include flexbox();
+	@include flexbox-direction(row);
+	@include flexbox-wrap(wrap);
+	@include flexbox-justify(left);
+	@include flexbox-align-items(top);
+	@media screen and (min-width: $tabwidth) {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+	@media screen and (min-width: $midwidth) {
+		margin-left: -50px;
+		margin-right: -50px;
+	}
+	@media screen and (min-width: $deskwidth) {
+		margin-left: -80px;
+		margin-right: -80px;
+	}
+
+	.service-info {
+		margin-bottom: 70px;
+		position: relative;
+		@media screen and (min-width: $tabwidth) {
+			width: 50%;
+			float: left;
+		}
+		@media screen and (min-width: $deskwidth) {
+			margin-bottom: 100px;
+		}
+	}
+	.inside {
+		padding-left: 0;
+		padding-right: 0;
+		@media screen and (min-width: $tabwidth) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		@media screen and (min-width: $midwidth) {
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			padding-left: 80px;
+			padding-right: 80px;
+		}
+	}
+	.icon {
+		max-width: 180px;
+		width: 100%;
+		height: auto;
+	}
+	.title {
+		font-weight: 500;
+		font-size: 18px;
+		margin: 12px 0 8px;
+	}
+	.description {
+		font-weight: 200;
+		font-size: 16px;
+	}
+	.description p {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+}	
+
+.align-mid {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.service-info.whatwedo {
+	.inside {
+		box-sizing: border-box;
+		height: 100%;
+	}
+	.ww_title {
+		margin: 0 0 10px;
+		font-weight: 600;
+		font-size: 35px;
+	}
+	.textwrap {
+		border: 2px solid #FFF;
+		padding: 20px 30px 30px;
+		height: 100%;
+		box-sizing: border-box;
+	}
+	.ww_button {
+		margin-top: 30px;
+	}
+	.ww_button a {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+		color: $color-lime-green;
+		font-size: 20px;
+		font-weight: 200;
+		text-decoration: none;
+		background: #FFF;
+		@include transition(all ease-out .3s);
+		&:hover {
+			background: $color-grey;
+			color: #FFF;
+		}
+	}
+}
+.site-footer {
+	background: $color-grey;
+	color: #FFF;
+	font-weight: 200;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.footer-menu-wrap {
+	text-align: center;
+	@media screen and (min-width: $tabwidth) {
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		width: 40%;
+		float: left;
+		text-align: left;
+	}
+	@media screen and (min-width: $deskwidth) {
+		width: 25%;
+	}
+	ul {
+		margin: 0 0;
+		padding: 0 0;
+		list-style: none;
+		ul {
+			display: none;
+		}
+	}
+	a {
+		display: inline-block;
+		color: #FFF;
+		text-decoration: none;
+		font-size: 14px;
+		@include transition(all ease-out .3s);
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	
+	.contact-link,
+	.menu li a {
+		padding-top: 3px;
+		padding-bottom: 3px;
+	}
+	.social-link {
+		display: inline-block;
+		font-size: 20px;
+		margin-right: 5px;
+	}
+}
+.foot-logo {
+	display: inline-block;
+	max-width: 110px;
+	width: 100%;
+}
+.copyright-info {
+	text-align: center;
+	margin-top: 20px;
+	@media screen and (min-width: $tabwidth) {
+		width: 40%;
+		float: right;
+		text-align: right;
+		margin-top: 0;
+	}
+	.copyright {
+		text-transform: uppercase;
+		font-size: 11px;
+		text-align: center;
+		line-height: 1.2;
+		margin-top: 12px;
+		@media screen and (min-width: $tabwidth) {
+			text-align: right;
+		}
+	}
+}
+
+.entry-title {
+	font-weight: 500;
+	font-size: 25px;
+}
