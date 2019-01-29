@@ -36,7 +36,6 @@ body {
 	}
 	@media screen and (min-width: $deskwidth) {
 		width: 1200px;
-		padding: 0px;
 	}
 }
 .midwrapper {
@@ -95,14 +94,13 @@ body {
 	}
 }
 .home .logo {
-	width: 120px;
-	margin: 5% auto 0;
+	width: 180px;
+	margin: 0 0;
 	@media screen and (min-width: $tabwidth) {
-		width: 120px;
-		margin: 0 0;
+		width: 200px;
 	}
 	@media screen and (min-width: $midwidth) {
-		width: 185px;
+		width: 260px;
 	}
 }
 .logo a {
@@ -121,7 +119,7 @@ body {
 }
 #masthead {
 	position: relative;
-	background-color: $color-sky-blue;
+	z-index: 200;
 	.wrapper {
 		position: relative;
 		margin-top: 15px;
@@ -146,6 +144,7 @@ body {
 		}
 	}
 }
+
 .default-temp {
 	min-height:25em;
 }

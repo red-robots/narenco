@@ -226,6 +226,32 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
     }
 }
 
+function title_formatter($string) {
+    if($string) {
+        $parts = explode(' ',trim($string));
+        $count_str = count($parts);
+        $offset = ceil($count_str/2);
+        $row_title = '<span>';
+        $i=1; foreach($parts as $a) {
+            $comma = ($i>1) ? ' ' : '';
+            if($i<=$offset) {
+                $row_title .= $comma . $a;
+                if($i==$offset) {
+                    $row_title .= '</span>';
+                }
+            } else {
+                $row_title .= $comma . $a;
+            }
+            $i++;
+        }
+        $row_title = trim($row_title);
+        $row_title = preg_replace('/\s+/', ' ', $row_title);
+    } else {
+        $row_title = '';
+    }
+    return $row_title;
+}
+
 
 function shortenText($string, $limit, $break=".", $pad="...") {
   // return with no change if string is shorter than $limit

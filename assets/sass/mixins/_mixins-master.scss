@@ -66,3 +66,23 @@
 	-webkit-transform: translateX($value1) translateY($value2);
 	transform: translateX($value1) translateY($value2);
   }
+
+@mixin gradient-green(){
+	background: #4b8a3e;
+	background: -moz-linear-gradient(left, #4b8a3e 0%, #a1cc3e 100%);
+	background: -webkit-linear-gradient(left, #4b8a3e 0%,#a1cc3e 100%);
+	background: linear-gradient(to right, #4b8a3e 0%,#a1cc3e 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b8a3e', endColorstr='#a1cc3e',GradientType=1 );
+}
+
+@mixin gradient-blue(){
+	background: #231bcc;
+	background: -moz-linear-gradient(left, #231bcc 0%, #3497fe 100%);
+	background: -webkit-linear-gradient(left, #231bcc 0%,#3497fe 100%);
+	background: linear-gradient(to right, #231bcc 0%,#3497fe 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#231bcc', endColorstr='#3497fe',GradientType=1 );
+}
+
+
+
+

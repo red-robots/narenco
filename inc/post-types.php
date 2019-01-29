@@ -83,6 +83,14 @@ function ii_custom_taxonomies() {
     $posts = array();
     $posts = array(
         array(
+            'post_type' => 'team',
+            'menu_name' => 'Departments',
+            'plural'    => 'Departments',
+            'single'    => 'Department',
+            'taxonomy'  => 'departments',
+            'show_admin_column' => TRUE
+        ),
+        array(
             'post_type' => 'projects',
             'menu_name' => 'Project Categories',
             'plural'    => 'Project Categories',
@@ -169,8 +177,9 @@ function custom_post_column( $column, $post_id ) {
     if($post_type=='team') {
         switch ( $column ) {
             case 'photo' :
-                $img = get_field('team_individual_image',$post_id);
-                $img_src = ($img) ? $img['sizes']['thumbnail'] : '';
+                $post_thumbnail_id = get_post_thumbnail_id( $post_id ); 
+                $img = wp_get_attachment_image_src($post_thumbnail_id,'medium');
+                $img_src = ($img) ? $img[0] : '';
                 $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
                 if($img_src) {
                    $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';
@@ -185,9 +194,11 @@ function custom_post_column( $column, $post_id ) {
     if($post_type=='projects') {
         switch ( $column ) {
             case 'photo' :
-                $post_thumbnail_id = get_post_thumbnail_id( $post_id );
-                $img = wp_get_attachment_image_src($post_thumbnail_id,'medium');
-                $img_src = ($img) ? $img[0] : '';
+                //$post_thumbnail_id = get_post_thumbnail_id( $post_id );
+                //$img = wp_get_attachment_image_src($post_thumbnail_id,'medium');
+                //$img_src = ($img) ? $img[0] : '';
+                $pImg = get_field('project_featured_image',$post_id);
+                $img_src = ($pImg) ? $pImg['url']:'';
                 $the_photo = '<span class="tmphoto" style="display:inline-block;width:50px;height:50px;background:#e2e1e1;text-align:center;">';
                 if($img_src) {
                    $the_photo .= '<img src="'.$img_src.'" alt="" style="width:100%;height:auto" />';

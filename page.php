@@ -11,7 +11,6 @@
  *
  * @package ACStarter
  */
-
 get_header(); ?>
 
 	<div id="primary" class="full-content-area clear default-temp">

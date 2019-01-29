@@ -52,8 +52,11 @@ $logo = get_custom_logo();
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<?php if( $is_home_page ) { ?>
-	<?php get_template_part('template-parts/home-banner'); ?>
-	<?php } ?>
+	<?php if( $is_home_page ) { 
+		get_template_part('template-parts/home-banner'); 
+	} else { 
+		get_template_part('template-parts/subpage-banner'); 
+	} ?>
+
 
 	<div id="content" class="site-content clear">

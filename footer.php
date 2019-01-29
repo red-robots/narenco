@@ -1,6 +1,4 @@
-
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer clear" role="contentinfo">
 		<div class="wrapper">
 			<?php 
@@ -9,7 +7,7 @@
 				$linkedin = get_field('linkedin','option');
 				$facebook = get_field('facebook','option');
 				$youtube = get_field('youtube','option');
-				$logo = get_custom_logo();
+				$footer_logo = get_field('footer_logo','option');
 			?>
 
 			<div class="footer-menu-wrap">
@@ -34,7 +32,7 @@
 			</div>
 
 			<div class="copyright-info">
-				<span class="foot-logo"><?php echo $logo; ?></span>
+				<span class="foot-logo"><img src="<?php echo $footer_logo['url']?>" alt="<?php echo $footer_logo['title']?>" /></span>
 				<div class="copyright">
 					&copy; Copyright <?php echo get_bloginfo('name'); ?> <?php echo date('Y'); ?>
 					<div class="br">All rights reserved.</div>

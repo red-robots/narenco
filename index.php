@@ -102,7 +102,10 @@ get_header(); ?>
 						<div class="row clear">
 						<?php $i=1; foreach($featuredProjects as $proj) { 
 							$proj_id = $proj->ID;
-							$proj_image = get_the_post_thumbnail($proj_id,'medium');
+							//$proj_image = get_the_post_thumbnail($proj_id,'medium');
+							$pImg = get_field('project_featured_image',$proj_id);
+							$proj_image_src = ($pImg) ? $pImg['url']:'';
+							$proj_image_alt = ($pImg) ? $pImg['title']:'';
 							$proj_link = get_permalink($proj_id);
 							$proj_name = $proj->post_title;
 							$project_size = get_field('project_size',$proj_id);
@@ -112,7 +115,9 @@ get_header(); ?>
 							<a class="box" href="<?php echo $proj_link;?>">
 								<span class="inside clear">
 									<span class="imagewrap">
-										<?php echo $proj_image; ?>
+										<?php if($proj_image_src) { ?>
+											<img src="<?php echo $proj_image_src; ?>" alt="<?php echo $proj_image_alt; ?>" />
+										<?php } ?>
 										<span class="projectname">
 											<span><?php echo $proj_name; ?></span>
 											<?php if($project_size) { ?>
