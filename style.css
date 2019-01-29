@@ -7071,10 +7071,10 @@ body {
     @media screen and (min-width: 900px) {
       .banner-caption .inside {
         width: 70%;
-        top: 55%;
-        -webkit-transform: translateY(-55%);
-            -ms-transform: translateY(-55%);
-                transform: translateY(-55%);
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
         width: 70%; } }
     @media screen and (min-width: 1200px) {
       .banner-caption .inside {
