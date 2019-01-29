@@ -1851,7 +1851,8 @@ body{color:#828282;font-size:14px;line-height:1.4}
 }.default-temp{min-height:25em}
 #page{overflow-y:scroll;overflow-x:hidden;position:relative}
 .parallax-window{min-height:400px;background:transparent}
-.home .parallax-mirror{background-color:#49abed}
+.home{background-color:#49abed}
+.home .site-content{background-color:#fff}
 .banner-wrapper{width:100%;height:480px;position:relative;height:100vh;max-height:1065px;background-size:cover;background-attachment:fixed}
 .banner-wrapper img{width:100%;height:auto;display:none}
 @media screen and (min-width:900px){.banner-wrapper img{display:none}
