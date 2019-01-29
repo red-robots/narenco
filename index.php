@@ -108,7 +108,7 @@ get_header(); ?>
 							$proj_image_alt = ($pImg) ? $pImg['title']:'';
 							$proj_link = get_permalink($proj_id);
 							$proj_name = $proj->post_title;
-							$project_size = get_field('project_size',$proj_id);
+							$project_details = get_field('project_details',$proj_id);
 							$categories = get_the_terms($proj_id,'project_categories');
 							$sec = $i+1;
 							?>
@@ -120,8 +120,8 @@ get_header(); ?>
 										<?php } ?>
 										<span class="projectname">
 											<span><?php echo $proj_name; ?></span>
-											<?php if($project_size) { ?>
-												<span class="size"><?php echo $project_size; ?></span>
+											<?php if($project_details) { ?>
+												<span class="size"><?php echo $project_details; ?></span>
 											<?php } ?>	
 										</span>
 										
