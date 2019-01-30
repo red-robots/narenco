@@ -1005,10 +1005,21 @@
 	.section-text {
 		margin-top: 50px;
 	}
+	.button a {
+		background: $color-grey;
+		color: #FFF;
+		font-size: 17px;
+		padding: 10px 40px;
+	}
+	.bottomText {
+		font-weight: 300;
+	}
 }
 .departments {
 	margin-top: 80px;
 	.dept-row {
+		margin-left: -10px;
+		margin-right: -10px;
 		@media screen and (min-width: $tabwidth) {
 			@include flexbox();
 			@include flexbox-wrap(wrap);

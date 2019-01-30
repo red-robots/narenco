@@ -258,6 +258,14 @@ get_header(); ?>
 					<?php } ?>
 				</div>
 				<?php } ?>
+
+				<?php if($leader_bottom_text) { ?>
+					<div class="section-text bottomText clear"><?php echo $leader_bottom_text; ?></div>
+				<?php } ?>
+				<?php if($leader_button_name && $leader_button_link) { ?>
+					<div class="section-text clear button"><a href="<?php echo $leader_button_link; ?>"><?php echo $leader_button_name; ?></a></div>
+				<?php } ?>
+
 			</div>
 		</section>
 
