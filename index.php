@@ -212,7 +212,7 @@ get_header(); ?>
 							<div class="service-info whatwedo text-center animated zoomIn wow" data-wow-delay=".8s">
 								<div class="inside clear">
 									<div class="textwrap clear">
-										<div class="align-mid">
+										<div class="align-mid-v">
 										<?php if($what_we_do_box_title) { ?>
 											<h3 class="ww_title"><?php echo $what_we_do_box_title; ?></h3>
 										<?php } ?>
