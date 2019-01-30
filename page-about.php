@@ -246,6 +246,7 @@ get_header(); ?>
 										<?php if($job_title) { ?>
 										<span class="jobtitle"><?php echo $job_title; ?></span>
 										<?php } ?>	
+										<span class="readmore"><i>Read More</i></span>
 									</span>
 									<span class="greenbg"></span>
 								</a>	

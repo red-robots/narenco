@@ -1072,8 +1072,8 @@
 		display: inline-block;
 		font-size: 30px;
 		position: relative;
-  		top: 50%;
-  		transform: translateY(-50%);
+  		top: 67%;
+  		transform: translateY(-67%);
   		z-index: 10;
   		@include transition(all ease-out .3s);
   		@media screen and (min-width: $tabwidth) {
@@ -1082,6 +1082,9 @@
 		@media screen and (min-width: $midwidth) {
 			font-size: 32px;
 		}
+	}
+	.name * {
+		@include transition(all ease-out .3s);
 	}
 	.jobtitle {
 		display: block;
@@ -1093,8 +1096,34 @@
 			font-size: 20px;
 		}
 	}
+	.readmore {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+	}
+	.readmore i {
+		display: inline-block;
+		padding: 5px 12px;
+		color: $color-lime-green;
+		background: #FFF;
+		text-transform: none;
+		font-size: 16px;
+		font-style: normal;
+	}
 	.team:hover {
 		.greenbg {
+			opacity: 1;
+			visibility: visible;
+		}
+		.name {
+			top: 48%;
+  			transform: translateY(-48%);
+		}
+		.readmore {
+			display: inline-block;
 			opacity: 1;
 			visibility: visible;
 		}
