@@ -2036,6 +2036,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .section-inner.leadership .section-text{margin-top:50px}
 .section-inner.leadership .button a{background:#828282;color:#FFF;font-size:17px;padding:10px 40px}
 .section-inner.leadership .bottomText{font-weight:300}
+.section-inner.leadership .section-title.med-width{margin-bottom:15px}
 .departments{margin-top:80px}
 .departments .dept-row{margin-left:-10px;margin-right:-10px}
 @media screen and (min-width:600px){.departments .dept-row{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:top;-ms-flex-line-pack:top;align-content:top;-webkit-align-items:top;-webkit-box-align:top;-ms-flex-align:top;align-items:top;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -2045,7 +2046,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 }@media screen and (min-width:900px){.departments .teamdiv{height:260px}
 }.departments .team{box-sizing:border-box;display:block;text-decoration:none;background:#828282;color:#FFF;text-align:center;height:100%;padding:20px;line-height:1.2;position:relative;text-transform:uppercase;background:#a8a8a8;background:-webkit-linear-gradient(left,#a8a8a8 0,#696a6d 100%);background:linear-gradient(to right,#a8a8a8 0,#696a6d 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a8a8a8',endColorstr='#696a6d',GradientType=1);-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .departments .greenbg{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;visibility:hidden;background:#4b8a3e;background:-webkit-linear-gradient(left,#4b8a3e 0,#a1cc3e 100%);background:linear-gradient(to right,#4b8a3e 0,#a1cc3e 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b8a3e',endColorstr='#a1cc3e',GradientType=1);-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.departments .deptname{font-weight:200;font-size:45px;margin:0 0 15px}
+.departments .deptname{font-weight:200;font-size:45px;margin:0}
 .departments .name{display:inline-block;font-size:30px;position:relative;top:67%;-webkit-transform:translateY(-67%);-ms-transform:translateY(-67%);transform:translateY(-67%);z-index:10;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 @media screen and (min-width:600px){.departments .name{font-size:3vw}
 }@media screen and (min-width:900px){.departments .name{font-size:32px}

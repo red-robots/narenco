@@ -1011,6 +1011,9 @@
 	.bottomText {
 		font-weight: 300;
 	}
+	.section-title.med-width {
+		margin-bottom: 15px;
+	}
 }
 .departments {
 	margin-top: 80px;
@@ -1074,7 +1077,7 @@
 	.deptname {
 		font-weight: 200;
 		font-size: 45px;
-		margin: 0 0 15px;
+		margin: 0 0;
 	}
 	.name {
 		display: inline-block;
