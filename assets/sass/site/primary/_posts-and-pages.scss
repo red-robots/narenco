@@ -705,10 +705,6 @@
 		@include gradient-green();
 		@include transition (all ease-out .3s);
 		&:hover {
-			// -moz-transform: scale(1.2);
-			// -webkit-transform: scale(1.2);
-			// -o-transform: scale(1.2);
-			// transform: scale(1.2);
 			opacity: 0.6;
 		}
 	}
@@ -719,10 +715,10 @@
 		background-position: top center;
 		background-repeat: no-repeat;
 		@media screen and (min-width: $tabwidth) {
-			height: 260px;
+			height: 280px;
 		}
 		@media screen and (min-width: $midwidth) {
-			height: 280px;
+			height: 300px;
 		}
 		.mid {
 			position: relative;
@@ -996,8 +992,9 @@
 .values-list {
 	padding-top: 50px;
 }
+.med-width,
 .section-title.med-width {
-	max-width: 880px;
+	max-width: 710px;
 	width: 100%;
 	margin: 0 auto 30px;
 }

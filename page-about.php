@@ -232,7 +232,7 @@ get_header(); ?>
 
 					?>
 					<div class="dept">
-						<h2 class="deptname"><?php echo $tm->name; ?></h2>
+						<div class="section-title med-width"><h2 class="deptname"><?php echo $tm->name; ?></h2></div>
 						<?php if ( $items->have_posts() ) { ?>
 						<div class="dept-row clear">
 							<?php while ( $items->have_posts() ) : $items->the_post();
