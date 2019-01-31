@@ -17,6 +17,10 @@
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+.section-inner:focus,
+div:focus {
+	outline: none;
+}
 body {
 	color: $color-grey;
 	font-size: 14px;
@@ -147,4 +151,26 @@ body {
 
 .default-temp {
 	min-height:25em;
+}
+
+.scrollTop {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 200px;
+	background: #313131;
+	color: #FFF;
+	text-align: center;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 10000;
+	outline: none;
+	@include transition(all ease-out .3s);
+}
+.scrollTop .arrowUp {
+	color: #FFF;
+	font-size: 16px;
+	position: relative;
+	top: 12px;
 }

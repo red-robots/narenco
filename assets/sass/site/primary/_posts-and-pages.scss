@@ -1187,9 +1187,11 @@
 .feat_testimonial {
 	border: 1px solid #FFF;
 	padding: 50px 30px;
-	margin-top: 60px;
 	position: relative;
 	font-size: 22px;
+	max-width: 930px;
+	width: 85%;
+	margin: 60px auto 0;
 	@media screen and (min-width: $tabwidth) {
 		font-size: 30px;
 	}
@@ -1210,7 +1212,7 @@
 		text-indent: -999em;
 		&.up {
 			top: -5px;
-			left: -45px;
+			left: -55px;
 		}
 		&.down {
 			bottom: -20px;
@@ -1235,5 +1237,32 @@
 		}
 	}
 }
-
+.section-inner.featured-projects {
+	.wrapper {
+		padding-top: 20px;
+		padding-bottom: 60px;
+	}
+}
+.section-inner.projects-bottom {
+	.midText {
+		margin: 0 auto;
+		font-size: 25px;
+		font-weight: 200;
+		color: #FFF;
+		text-shadow: 1px 1px 6px black;
+	}
+	.button {
+		margin-top: 20px;
+	}
+	.button a {
+		background: #FFF;
+		background: $color-lime-green;
+		color: #FFF;
+		&:hover {
+			opacity: 1;
+			background: #FFF;
+			color: $color-lime-green;
+		}
+	}
+}
 

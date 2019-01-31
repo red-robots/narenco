@@ -79,7 +79,7 @@ get_header(); ?>
 				<?php $timelines = get_field('timelines'); ?>
 				<?php if($timelines) { 
 					$count = count($timelines); ?>
-					<div class="history-timelines clear">
+					<div id="ourHistory" class="history-timelines clear">
 						<div class="row clear">
 							<div class="line"><span></span></div>
 							<?php $k=1; foreach($timelines as $tm) { 
