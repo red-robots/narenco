@@ -1837,7 +1837,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .home #masthead .wrapper{margin-top:20px;margin-bottom:0}
 @media screen and (min-width:600px){.home #masthead .wrapper{margin-top:35px;margin-bottom:35px}
 }.default-temp{min-height:25em}
-.scrollTop{display:block;width:40px;height:40px;border-radius:200px;background:#313131;color:#FFF;text-align:center;position:fixed;bottom:20px;right:20px;z-index:10000;outline:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.scrollTop{display:block;width:40px;height:40px;border-radius:200px;background:#313131;color:#FFF;text-align:center;position:fixed;bottom:20px;right:20px;z-index:10000;outline:0;opacity:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .scrollTop .arrowUp{color:#FFF;font-size:16px;position:relative;top:12px}
 #page{overflow-y:scroll;overflow-x:hidden;position:relative}
 .parallax-window{min-height:400px;background:transparent}

@@ -169,6 +169,7 @@ body {
 	right: 20px;
 	z-index: 10000;
 	outline: none;
+	opacity: 0;
 	@include transition(all ease-out .3s);
 }
 .scrollTop .arrowUp {
