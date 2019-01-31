@@ -708,6 +708,10 @@
 			opacity: 0.6;
 		}
 	}
+	.button .btn2 {
+		font-size: 17px;
+		padding: 10px 40px;
+	}
 	.titlediv {
 		position: relative;
 		height: 150px;
@@ -1005,8 +1009,6 @@
 	.button a {
 		background: $color-grey;
 		color: #FFF;
-		font-size: 17px;
-		padding: 10px 40px;
 	}
 	.bottomText {
 		font-weight: 300;
@@ -1035,10 +1037,12 @@
 		box-sizing: border-box;
 		padding:0 10px;
 		height: 180px;
+		margin-bottom: 20px;
 		@media screen and (min-width: $tabwidth) {
-			width: 33.333%;
+			width: 32.333%;
 			float: left;
 			height: 220px;
+			margin-bottom: 0;
 		}
 		@media screen and (min-width: $midwidth) {
 			height: 260px;
@@ -1081,13 +1085,14 @@
 	}
 	.name {
 		display: inline-block;
-		font-size: 30px;
+		font-size: 26px;
 		position: relative;
-  		top: 67%;
+  		top: 77%;
   		transform: translateY(-67%);
   		z-index: 10;
   		@include transition(all ease-out .3s);
   		@media screen and (min-width: $tabwidth) {
+  			top: 67%;
 			font-size: 3vw;
 		}
 		@media screen and (min-width: $midwidth) {
@@ -1099,7 +1104,7 @@
 	}
 	.jobtitle {
 		display: block;
-		font-size: 20px;
+		font-size: 18px;
 		@media screen and (min-width: $tabwidth) {
 			font-size: 2vw;
 		}
@@ -1140,3 +1145,95 @@
 		}
 	}
 }
+
+.section-inner.community {
+	@include gradient-green();
+	color: #FFF;
+	text-align: center;
+	.column-texts {
+		margin-top: 60px;
+		margin-bottom: 20px;
+		@media screen and (min-width: $tabwidth) {
+			margin-left: -40px;
+			margin-right: -40px;
+			margin-top: 80px;
+			margin-bottom: 80px;
+		}
+		.col {
+			margin-bottom: 30px;
+			@media screen and (min-width: $tabwidth) {
+				width: 50%;
+				float: left;
+				margin-bottom: 0;
+			}
+			strong {
+				font-weight: 500;
+			}
+		}
+		.pad {
+			padding-left: 0;
+			padding-right: 0;
+			@media screen and (min-width: $tabwidth) {
+				padding-left: 40px;
+				padding-right: 40px;
+			}
+		}
+	}
+	.button .btn2 {
+		background: #FFF;
+		color: $color-lime-green;
+	}
+}
+.feat_testimonial {
+	border: 1px solid #FFF;
+	padding: 50px 30px;
+	margin-top: 60px;
+	position: relative;
+	font-size: 22px;
+	@media screen and (min-width: $tabwidth) {
+		font-size: 30px;
+	}
+	.text {
+		position: relative;
+	}
+	.qt {
+		font-size: 80px;
+		font-weight: 800;
+		display: block;
+		width: 50px;
+		height: 50px;
+		background: url('images/quote.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: absolute;
+		text-indent: -999em;
+		&.up {
+			top: -5px;
+			left: -45px;
+		}
+		&.down {
+			bottom: -20px;
+			right: -45px;
+			transform: rotate(180deg) scaleY(1);
+		}
+	}
+	p {
+		margin-top: 0;
+		margin-bottom: 15px;
+	}
+
+	strong {
+		color: $color-blue;
+	}
+	.author {
+		margin: 15px 0 0;
+		font-size: 16px;
+		font-weight: 300;
+		@media screen and (min-width: $tabwidth) {
+			font-size: 18px;
+		}
+	}
+}
+
+

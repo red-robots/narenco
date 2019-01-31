@@ -17,10 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
 <script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.js"></script>
-
-
 <?php wp_head(); 
 $is_home_page = ( is_front_page() || is_home() ) ? true : false;
 $classes[] = ( $is_home_page ) ? 'homepage':'subpage';

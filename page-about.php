@@ -263,8 +263,68 @@ get_header(); ?>
 					<div class="section-text bottomText clear"><?php echo $leader_bottom_text; ?></div>
 				<?php } ?>
 				<?php if($leader_button_name && $leader_button_link) { ?>
-					<div class="section-text clear button"><a href="<?php echo $leader_button_link; ?>"><?php echo $leader_button_name; ?></a></div>
+					<div class="section-text clear button"><a class="btn2" href="<?php echo $leader_button_link; ?>"><?php echo $leader_button_name; ?></a></div>
 				<?php } ?>
+
+			</div>
+		</section>
+
+		<?php
+			/* COMMUNITY */
+			$community_title = get_field('community_title');
+			$community_text = get_field('community_text_1');
+			$comm_bg_image = get_field('community_background_image');
+			$feat_testimonial = get_field('featured_testimonial');
+			$testimonial_author = get_field('testimonial_author');
+			$column_1_text = get_field('column_1_text');
+			$column_2_text = get_field('column_2_text');
+			$community_bottom_text = get_field('community_bottom_text');
+			$com_bottom_btn_name = get_field('community_bottom_btn_name');
+			$com_bottom_btn_link = get_field('community_bottom_btn_link');
+			$community_style = '';
+			if($comm_bg_image){
+				$community_style = ' style="background-image:url('.$comm_bg_image['url'].')"';
+			} 
+		?>
+		<section id="community" class="section-inner community">
+			<?php if($community_title) { ?>
+			<div class="titlediv text-center"<?php echo $community_style;?>>
+				<div class="mid clear"><h2 class="title"><?php echo $community_title; ?></h2></div>
+			</div>
+			<?php } ?>
+			<div class="wrapper">
+				<?php if($community_text) { ?>
+				<div class="med-width clear"><?php echo $community_text;?></div>
+				<?php } ?>	
+				<?php if($feat_testimonial) { ?>
+				<div class="feat_testimonial clear">
+					<div class="text"><span class="qt up"></span><span class="qt down"></span><?php echo $feat_testimonial;?></div>	
+					<?php if($testimonial_author) { ?>
+					<div class="author"><?php echo $testimonial_author;?></div>
+					<?php } ?>
+				</div>
+				<?php } ?>	
+
+				<div class="column-texts clear">
+				<?php if($column_1_text) { ?>
+				<div class="col one"><div class="pad clear"><?php echo $column_1_text;?></div></div>
+				<?php } ?>	
+				<?php if($column_2_text) { ?>
+				<div class="col two"><div class="pad clear"><?php echo $column_2_text;?></div></div>
+				<?php } ?>	
+				</div>
+
+				<?php if($community_bottom_text) { ?>
+				<div class="com-bottom-text">
+					<div class="med-width"><?php echo $community_bottom_text;?></div>
+				</div>
+				<?php } ?>	
+
+				<?php if($com_bottom_btn_name && $com_bottom_btn_link) { ?>
+				<div class="button">
+					<a class="btn2" href="<?php echo $com_bottom_btn_link;?>"><?php echo $com_bottom_btn_name;?></a>
+				</div>
+				<?php } ?>	
 
 			</div>
 		</section>
