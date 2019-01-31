@@ -1959,7 +1959,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .footer-menu-wrap .social-link{display:inline-block;font-size:20px;margin-right:5px}
 .foot-logo{display:inline-block;max-width:160px;width:100%}
 .copyright-info{text-align:center;margin-top:20px}
-@media screen and (min-width:600px){.copyright-info{width:40%;float:right;text-align:right;margin-top:0}
+@media screen and (min-width:600px){.copyright-info{width:40%;float:right;text-align:right;margin-top:10px}
 }.copyright-info .copyright{text-transform:uppercase;font-size:11px;text-align:center;line-height:1.2;margin-top:12px}
 @media screen and (min-width:600px){.copyright-info .copyright{text-align:right}
 }.entry-title{font-weight:500;font-size:25px}
