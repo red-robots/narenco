@@ -2088,6 +2088,40 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .section-inner.projects-bottom .button{margin-top:20px}
 .section-inner.projects-bottom .button a{background:#FFF;background:#94c33e;color:#FFF}
 .section-inner.projects-bottom .button a:hover{opacity:1;background:#FFF;color:#94c33e}
+.default-temp .intro h2{margin:0 0 35px;font-size:45px;font-weight:200;line-height:1.2}
+@media screen and (min-width:600px){.flex-container .row{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:top;-ms-flex-line-pack:top;align-content:top;-webkit-align-items:top;-webkit-box-align:top;-ms-flex-align:top;align-items:top;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-left:-20px;margin-right:-20px}
+}.flex-container .textcol{box-sizing:border-box;margin-bottom:30px}
+@media screen and (min-width:600px){.flex-container .textcol{width:50%;float:left;padding-left:20px;padding-right:20px}
+}.flex-container .textcol .title{font-weight:500;margin-bottom:5px}
+.flex-container .textcol p{margin-top:0}
+.section-inner.contact{background:#231bcc;background:-webkit-linear-gradient(left,#231bcc 0,#3497fe 100%);background:linear-gradient(to right,#231bcc 0,#3497fe 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#231bcc',endColorstr='#3497fe',GradientType=1)}
+.section-inner.contact .wrapper{padding-top:80px;padding-bottom:30px}
+.section-inner.contact .textcol{color:#FFF}
+.section-inner.contact .textcol a{color:#FFF;text-decoration:none;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.section-inner.contact .textcol a:hover{color:#94c33e}
+.contact-form-wrapper{max-width:900px;width:100%;margin:0 auto}
+@media screen and (min-width:600px){.contact-form-wrapper .gform_wrapper ul.gform_fields{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:flex-end;-ms-flex-line-pack:end;align-content:flex-end;-webkit-align-items:flex-end;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+}.contact-form-wrapper .gform_wrapper ul.gform_fields li,.contact-form-wrapper .gform_wrapper ul.gform_fields li.gfield{margin:0 0 35px;position:relative}
+@media screen and (min-width:600px){.contact-form-wrapper .gform_wrapper ul.gform_fields li,.contact-form-wrapper .gform_wrapper ul.gform_fields li.gfield{width:50%;float:left;clear:none;padding-right:30px}
+}.contact-form-wrapper .gform_wrapper ul.gform_fields li#field_1_9,.contact-form-wrapper .gform_wrapper ul.gform_fields li#field_1_8,.contact-form-wrapper .gform_wrapper ul.gform_fields li#field_1_1{width:100%;padding-right:0}
+.contact-form-wrapper .gform_wrapper input.medium{width:100% !important;margin:0}
+.contact-form-wrapper .top_label div.ginput_complex.ginput_container.gf_name_has_2{width:100%;float:left}
+.contact-form-wrapper div.ginput_container_name span{display:block;width:50%;float:left;margin-right:0}
+@media screen and (min-width:600px){.contact-form-wrapper div.ginput_container_name span{padding-right:30px}
+}@media screen and (min-width:600px){.contact-form-wrapper .gform_wrapper ul.gform_fields{margin-right:-30px !important}
+}.contact-form-wrapper .gform_wrapper.gf_browser_chrome ul.gform_fields li li{width:100%;padding-left:23px !important;margin-bottom:10px}
+.contact-form-wrapper .gform_wrapper.gf_browser_chrome ul.gform_fields li li input{margin-top:0;position:absolute;top:2px;left:0}
+.contact-form-wrapper .gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio]{margin-top:0}
+.contact-form-wrapper .gform_wrapper.gf_browser_chrome ul.gform_fields li.gfield select{height:36px;line-height:36px}
+.contact-form-wrapper .gform_wrapper .gform_footer{margin-top:0;padding-top:0}
+.contact-form-wrapper .gform_wrapper .gform_footer input[type=submit]{margin:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s;color:#FFF;background:#307be5;background:-webkit-linear-gradient(top,#307be5 0,#231bcc 100%);background:linear-gradient(to bottom,#307be5 0,#231bcc 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#307be5',endColorstr='#231bcc',GradientType=0);box-shadow:none;border:0;border-radius:5px;-webkit-appearance:none;text-shadow:none;padding:14px 40px;font-size:20px;border:1px solid #2770d6}
+.contact-form-wrapper .gform_wrapper .gform_footer input[type=submit]:hover{background:#231bcc;background:-webkit-linear-gradient(top,#231bcc 0,#307be5 100%);background:linear-gradient(to bottom,#231bcc 0,#307be5 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#231bcc',endColorstr='#307be5',GradientType=0)}
+.contact-form-wrapper .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description{padding-right:0;padding-top:0;font-size:12px;font-weight:normal}
+.contact-form-wrapper .gform_wrapper li.gfield.gfield_error{padding-top:0;padding-bottom:10px;border-top:0;border-bottom:0;background-color:transparent}
+.gform_wrapper .validation_message,.gform_wrapper .gfield_error .gfield_label,.gform_wrapper div.validation_error{color:#d71019 !important}
+.gform_wrapper div.validation_error{border-top:2px solid #d71019 !important;border-bottom:2px solid #d71019 !important}
+.gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),.gform_wrapper li.gfield_error textarea{border:1px solid #d71019 !important}
+.section-inner.contact-form-section{font-weight:300}
 .blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
