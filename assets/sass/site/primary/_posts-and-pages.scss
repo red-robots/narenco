@@ -81,6 +81,8 @@
 		}
 	}
 }
+
+.section-inner .wrapper h2,
 .section-title {
 	margin: 0 0;
 	font-size: 35px;
@@ -412,9 +414,9 @@
 		background: $color-grey;
 		color: #FFF;
 		text-decoration: none;
-		padding: 5px 25px;
-		font-size: 20px;
-		font-weight: 300;
+		padding: 10px 40px;
+		font-size: 18px;
+		font-weight: 200;
 		@include transition(all ease-out .3s);
 		&:hover {
 			background: $color-lime-green;
@@ -689,7 +691,7 @@
 	font-weight: 200;
 	.wrapper {
 		padding-top: 60px;
-		padding-bottom: 60px;
+		padding-bottom: 80px;
 	}
 	.section-title {
 		margin-bottom: 35px;
@@ -711,7 +713,7 @@
 		}
 	}
 	.button .btn2 {
-		font-size: 17px;
+		font-size: 18px;
 		padding: 10px 40px;
 	}
 	.titlediv {
@@ -939,33 +941,28 @@
 			@include flexbox();
 			@include flexbox-wrap(wrap);
 			@include flexbox-direction(row);
+			@include flexbox-justify(center);
+			margin-left: -8%;
+			margin-right: -8%;
 		}
-		@media screen and (min-width: $midwidth) {
-			margin-left: -40px;
-			margin-right: -40px;
-		}
-		@media screen and (min-width: $deskwidth) {
-			margin-left: -80px;
-			margin-right: -80px;
-		}
+		
 	}
 	.column {
-		margin-bottom: 60px;
+		margin-top: 30px;
+		margin-bottom: 30px;
 		@media screen and (min-width: $tabwidth) {
+			display: inline-block;
 			width: 50%;
-			float: left;
+			margin-top: 40px;
+			margin-bottom: 40px;
 		}
 	}
 	.inside {
 		padding-left: 30px;
 		padding-right: 30px;
-		@media screen and (min-width: $midwidth) {
-			padding-left: 40px;
-			padding-right: 40px;
-		}
-		@media screen and (min-width: $deskwidth) {
-			padding-left: 80px;
-			padding-right: 80px;
+		@media screen and (min-width: $tabwidth) {
+			padding-left: 16%;
+			padding-right: 16%;
 		}
 	}
 	.icon {
@@ -1456,4 +1453,24 @@
 .section-inner.contact-form-section {
 	font-weight: 300;
 }
-
+.section-inner.blue-bg {
+	color: #FFF;
+	@include gradient-blue();
+}
+.row .description {
+	p strong {
+		font-weight: 400;
+	}
+}
+.advantages-info .title.larger {
+	font-size: 20px;
+}
+.section-inner.process {
+	.textwrap p {
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+	.advantages-info .title {
+		margin-bottom: 20px;
+	}
+}
