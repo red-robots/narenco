@@ -2133,9 +2133,10 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .page-title{color:#94c33e;margin:0 0 30px;font-size:30px}
 @media screen and (min-width:600px){.page-title{font-size:50px}
 }.single-project-page .site-main{padding-top:50px;padding-bottom:50px;font-weight:300}
-.single-project-page .site-main .feat-image{margin-top:18px;margin-bottom:20px}
-@media screen and (min-width:600px){.single-project-page .site-main .feat-image{width:50%;float:left;margin-bottom:0}
+.single-project-page .site-main .feat-image{margin-top:18px;margin-bottom:20px;float:left;width:100%}
+@media screen and (min-width:600px){.single-project-page .site-main .feat-image{width:50%;margin-bottom:0}
 }.single-project-page .site-main .feat-image img{width:100%;height:auto;float:left}
+.single-project-page .site-main .text-content.has-image{float:left;width:100%}
 @media screen and (min-width:600px){.single-project-page .site-main .text-content.has-image{width:45%;float:right}
 }.single-project-page .site-main .categories .cat{text-transform:uppercase;font-weight:600}
 .single-project-page .site-main .catlist span{display:inline-block;float:left;margin-right:3px}

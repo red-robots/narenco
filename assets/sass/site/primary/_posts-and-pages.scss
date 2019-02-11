@@ -1504,9 +1504,10 @@
 	.feat-image {
 		margin-top: 18px;
 		margin-bottom: 20px;
+		float: left;
+		width: 100%;
 		@media screen and (min-width: $tabwidth) {
 			width: 50%;
-			float: left;
 			margin-bottom: 0;
 		}
 	}
@@ -1516,6 +1517,8 @@
 		float: left;
 	}
 	.text-content.has-image {
+		float: left;
+		width: 100%;
 		@media screen and (min-width: $tabwidth) {
 			width: 45%;
 			float: right;
