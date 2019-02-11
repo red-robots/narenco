@@ -2142,6 +2142,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .single-project-page .site-main .catlist span{display:inline-block;float:left;margin-right:3px}
 .specifications{margin-bottom:30px}
 .specifications .s_label{font-weight:600;margin-right:5px;text-transform:uppercase}
+.specifications .spec{margin-bottom:3px}
 .next-prev-post a{display:inline-block;margin-top:50px;float:left;color:#888;text-decoration:none;text-transform:uppercase;font-size:12px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 @media screen and (min-width:600px){.next-prev-post a{font-size:14px}
 }.next-prev-post a:hover{color:#94c33e}
