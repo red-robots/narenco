@@ -17,6 +17,7 @@ if ( $items->have_posts() ) { ?>
 				$proj_link = get_permalink();
 				$proj_name = get_the_title();
 				$project_details = get_field('project_details');
+				//$project_details = get_field('size');
 				$categories = get_the_terms($proj_id,'project_categories'); ?>
 
 				<a class="box" href="<?php echo $proj_link;?>">
@@ -28,7 +29,7 @@ if ( $items->have_posts() ) { ?>
 							<span class="projectname">
 								<span><?php echo $proj_name; ?></span>
 								<?php if($project_details) { ?>
-									<span class="size"><?php echo $project_details; ?></span>
+									<span class="size">(<?php echo $project_details; ?>)</span>
 								<?php } ?>	
 							</span>
 							
