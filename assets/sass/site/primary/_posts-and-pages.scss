@@ -466,14 +466,14 @@
 	}
 
 	.service-info {
-		margin-bottom: 70px;
+		margin-bottom: 30px;
 		position: relative;
 		@media screen and (min-width: $tabwidth) {
 			width: 50%;
 			float: left;
 		}
 		@media screen and (min-width: $deskwidth) {
-			margin-bottom: 100px;
+			margin-bottom: 45px;
 		}
 	}
 	.inside {
@@ -499,12 +499,12 @@
 	}
 	.title {
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 20px;
 		margin: 12px 0 8px;
 	}
 	.description {
 		font-weight: 200;
-		font-size: 16px;
+		font-size: 17px;
 	}
 	.description p {
 		margin-top: 0;
@@ -957,12 +957,10 @@
 		
 	}
 	.column {
-		margin-top: 30px;
 		margin-bottom: 30px;
 		@media screen and (min-width: $tabwidth) {
 			display: inline-block;
 			width: 50%;
-			margin-top: 40px;
 			margin-bottom: 40px;
 		}
 	}
