@@ -42,13 +42,16 @@ add_filter( 'query_vars', 'add_query_vars_filter' );
 
 
 /* GENERATE SITEMAP */
-function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=null) {
+function generate_sitemap($menuName='top-menu',$pageWithCats=null) {
     global $wpdb;
     $lists = array();
     $menus = wp_get_nav_menu_items($menuName);
     $menu_orders = array();
     $menu_with_children = array();
     $navi_order = array();
+    $custom_navs = array();
+    $custom_nav_items = array();
+    $is_child_of_custom_nav = array();
 
     if($menus) {
         $i=0;
@@ -57,8 +60,40 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
             $menu_title = $m->title;
             $page_url = $m->url;
             $post_parent = $m->post_parent;
+            $post_name = $m->post_name;
+            $nav_type = $m->type;
             $submenu = array();
             $navi_order[] = $page_id;
+            $menu_item_parent = $m->menu_item_parent;
+
+            if($nav_type=='custom') {
+                $custom_nav_items[$page_id] = $m;
+            }
+
+            if($menu_item_parent>0) {
+                if( $info = get_menu_data($menuName,$menu_item_parent) ) {
+                    $info_nav_type = $info->type;
+                    $lists[$menu_item_parent]['parent_id'] = $menu_item_parent;
+                    $lists[$menu_item_parent]['parent_title'] = $info->title;
+                    $lists[$menu_item_parent]['parent_url'] = $info->url;
+                    $lists[$menu_item_parent]['children'][] = array(
+                                    'id'=>$page_id,
+                                    'title'=>$menu_title,
+                                    'url'=>$page_url
+                                );
+                    if($info_nav_type=='custom') {
+                        $is_child_of_custom_nav[$page_id] = $m;
+                    }
+                }
+                
+            } else {
+                if($nav_type=='custom') {
+                    $lists[$page_id]['parent_id'] = $page_id;
+                    $lists[$page_id]['parent_title'] = $menu_title;
+                    $lists[$page_id]['parent_url'] = $page_url;
+                }
+            } 
+
             if($post_parent) {
                 $submenu = array(
                         'id'=>$page_id,
@@ -69,9 +104,11 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
             } else {
                 $menu_orders[$page_id] = $menu_title;
             } 
+            
             $i++;
         }
-    }    
+    }  
+
     
     $results = $wpdb->get_results( "SELECT ID,post_title FROM {$wpdb->prefix}posts WHERE post_type = 'page' AND post_status='publish' AND post_parent=0 ORDER BY post_title ASC", OBJECT );
     $childPages = $wpdb->get_results( "SELECT ID,post_title,post_parent as parent_id FROM {$wpdb->prefix}posts WHERE post_type = 'page' AND post_status='publish' AND post_parent>0 ORDER BY post_title ASC", OBJECT );
@@ -106,7 +143,7 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
         
             if($menu_orders) {
                 $first_menu = array_values($menu_orders)[0];
-                if($page_title=='Homepage') {
+                if($page_title=='Homepage' || $page_title=='Home') {
                     $page_title = $first_menu;
                 }
                 if(array_key_exists($id,$menu_orders)) {
@@ -159,7 +196,7 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
                         if($taxo) {
                             $o_terms = get_terms( array(
                                 'taxonomy' => $taxo,
-                                'hide_empty' => false,
+                                'hide_empty' => true,
                             ) );
                             if($o_terms){
                                 foreach ($o_terms as $t) {
@@ -191,39 +228,50 @@ function generate_sitemap($menuName='top-menu',$pageWithCats=null,$orderByNavi=n
                 }
             }
 
-            // $cat_args = array('hide_empty' => 1, 'parent' => 0, 'exclude'=>array(1));
-            // $i_parent_ID = 8; /* Artwork page */
-            // $artwork_terms = get_terms( array(
-            //     'taxonomy' => 'arttypes',
-            //     'hide_empty' => false,
-            // ));
-            // if($id == $i_parent_ID) {
-            //     $lists[$id]['categories'] = $artwork_terms;
-            // }
         }   
     }
 
-    $new_list = array();
-    if($orderByNavi && $menus && $lists) {
-        foreach($navi_order as $x_id) {
-            if( array_key_exists($x_id, $lists) ) {
-                $new_items = $lists[$x_id];
-                $new_list[$x_id] = $new_items;
-            } 
-        }
+    if($lists && $custom_nav_items) {
+        $the_meu_items = sort_array_items($lists, 'parent_title','ASC'); 
+    } else {
+        $the_meu_items = $list;
+    }
 
-        foreach($lists as $k_id=>$k_vars) {
-            if( !in_array($k_id, $orderByNavi) ) {
-                $new_list[$k_id] = $k_vars;
+    if($is_child_of_custom_nav) {
+        $new_items = array();
+        if($the_meu_items) {
+            foreach($the_meu_items as $a) {
+                $p_id = $a['parent_id'];
+                if( !array_key_exists($p_id, $is_child_of_custom_nav) ) {
+                    $new_items[] = $a;
+                }
+            }
+        }
+        return $new_items;  
+    } else {
+        return $the_meu_items;  
+    }
+    
+
+    
+
+}
+
+function get_menu_data($menuName,$object_id) {
+    $data = '';
+    if($menuName && $object_id) {
+        $menu_items = wp_get_nav_menu_items($menuName);
+        if($menu_items) {
+            foreach($menu_items as $m) {
+                $o_id = $m->object_id;
+                if($o_id==$object_id) {
+                    $data = $m;
+                    break;
+                }
             }
         }
     }
-
-    if($new_list) {
-        return $new_list;   
-    } else {
-        return $lists;   
-    }
+    return $data;
 }
 
 function title_formatter($string) {
@@ -288,5 +336,42 @@ function get_page_id_by_template($fileName) {
         }
     }
     return $page_id;
+}
+
+function string_cleaner($str) {
+    if($str) {
+        $str = str_replace(' ', '', $str); 
+        $str = preg_replace('/\s+/', '', $str);
+        $str = preg_replace('/[^A-Za-z0-9\-]/', '', $str);
+        $str = strtolower($str);
+        $str = trim($str);
+        return $str;
+    }
+}
+
+
+function sort_array_items($array, $key, $sort='DESC') {
+    $sorter=array();
+    $ret=array();
+    $items = array();
+
+    foreach($array as $k=>$v) {
+        $str = string_cleaner($v[$key]);
+        $index = $str.'_'.$k;
+        $sorter[$index] = $v;
+    }
+
+    if($sort=='DESC') {
+        krsort($sorter);
+    } else {
+        ksort($sorter);
+    }
+
+    foreach($sorter as $key=>$val) {
+        $parts = explode('_',$key);
+        $n = $parts[1];
+        $items[$n] = $val;
+    }
+    return $items;
 }
 
