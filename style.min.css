@@ -1939,7 +1939,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 }@media screen and (min-width:1200px){.services-list .inside{padding-left:80px;padding-right:80px}
 }.services-list .icon{max-width:180px;width:100%;height:auto}
 .services-list .title{font-weight:500;font-size:20px;margin:12px 0 8px}
-.services-list .description{font-weight:200;font-size:17px}
+.services-list .description{font-weight:200;font-size:18px}
 .services-list .description p{margin-top:0;margin-bottom:15px}
 .align-mid{position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}
 .service-info.whatwedo .inside{box-sizing:border-box}
@@ -1976,7 +1976,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 }@media screen and (min-width:900px){.subpage-banner-wrapper h1{font-size:100px}
 }.subpage-banner-wrapper h1 span{font-weight:200}
 .section-title.greenspan b{color:#94c33e;font-weight:600}
-.section-inner{font-size:16px;font-weight:200}
+.section-inner{font-size:18px;font-weight:200}
 .section-inner .wrapper{padding-top:60px;padding-bottom:80px}
 .section-inner .section-title{margin-bottom:35px}
 .section-inner .button{margin-top:40px}
@@ -2032,7 +2032,8 @@ body{color:#828282;font-size:14px;line-height:1.4}
 @media screen and (min-width:600px){.advantages-info .inside{padding-left:16%;padding-right:16%}
 }.advantages-info .icon{margin-bottom:10px}
 .advantages-info .icon img{max-width:150px;width:100%;height:auto}
-.advantages-info .title{font-weight:500;margin-bottom:5px}
+.advantages-info .title{font-size:20px;font-weight:500;margin-bottom:5px}
+.advantages-info .description{font-size:18px}
 .service-info.whatwedo.mission .textwrap{display:inline-block;border:2px solid #828282}
 .service-info.whatwedo.mission .ww_button a{background:#828282;color:#FFF}
 .service-info.whatwedo.mission .ww_button a:hover{background:#525151}
@@ -2042,7 +2043,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .section-inner.leadership .section-text{margin-top:50px}
 .section-inner.leadership .button a{background:#828282;color:#FFF}
 .section-inner.leadership .bottomText{font-weight:300}
-.section-inner.leadership .section-title.med-width{margin-bottom:15px}
+.section-inner.leadership .section-title.med-width{display:inline-block;margin-bottom:15px}
 .departments{margin-top:80px}
 .departments .dept-row{margin-left:-10px;margin-right:-10px}
 @media screen and (min-width:600px){.departments .dept-row{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:top;-ms-flex-line-pack:top;align-content:top;-webkit-align-items:top;-webkit-box-align:top;-ms-flex-align:top;align-items:top;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -2130,7 +2131,7 @@ body{color:#828282;font-size:14px;line-height:1.4}
 .row .description p strong{font-weight:400}
 .advantages-info .title.larger{font-size:20px}
 .section-inner.process .textwrap p{margin-top:0;margin-bottom:12px}
-.section-inner.process .advantages-info .title{margin-bottom:20px}
+.section-inner.process .advantages-info .title{margin-top:15px;margin-bottom:18px}
 .page-title{color:#94c33e;margin:0 0 30px;font-size:30px}
 @media screen and (min-width:600px){.page-title{font-size:50px}
 }.single-project-page .site-main{padding-top:50px;padding-bottom:50px;font-weight:300}

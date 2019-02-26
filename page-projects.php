@@ -42,7 +42,9 @@ get_header(); ?>
 				<div class="mid clear">
 					<?php if($bottom_section_description) { ?>
 					<div class="wrapper">
-						<div class="midText clear"><?php echo $bottom_section_description; ?></div>
+						<div class="midText clear">
+							<h2 class="section-title"><?php echo $bottom_section_description; ?></h2>
+						</div>
 						<?php } ?>
 						<?php if($bottom_section_button_text && $bottom_section_button_link) { ?>
 						<div class="button"><a class="btn2" href="<?php echo $bottom_section_button_link; ?>"><?php echo $bottom_section_button_text; ?></a></div>

@@ -504,7 +504,7 @@
 	}
 	.description {
 		font-weight: 200;
-		font-size: 17px;
+		font-size: 18px;
 	}
 	.description p {
 		margin-top: 0;
@@ -699,7 +699,7 @@
 	font-weight: 600;
 }
 .section-inner {
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 200;
 	.wrapper {
 		padding-top: 60px;
@@ -993,8 +993,12 @@
 		height: auto;
 	}
 	.title {
+		font-size: 20px;
 		font-weight: 500;
 		margin-bottom: 5px;
+	}
+	.description {
+		font-size: 18px;
 	}
 }
 .service-info.whatwedo.mission .textwrap {
@@ -1032,6 +1036,7 @@
 		font-weight: 300;
 	}
 	.section-title.med-width {
+		display: inline-block;
 		margin-bottom: 15px;
 	}
 }
@@ -1496,7 +1501,8 @@
 		margin-bottom: 12px;
 	}
 	.advantages-info .title {
-		margin-bottom: 20px;
+		margin-top: 15px;
+		margin-bottom: 18px;
 	}
 }
 .page-title {
