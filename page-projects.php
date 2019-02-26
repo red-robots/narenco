@@ -38,12 +38,12 @@ get_header(); ?>
 			}
 		?>
 		<section class="section-inner projects-bottom">
-			<div class="titlediv text-center"<?php echo $bgStyle;?>>
+			<div class="titlediv text-center overlayBg"<?php echo $bgStyle;?>>
 				<div class="mid clear">
 					<?php if($bottom_section_description) { ?>
 					<div class="wrapper">
 						<div class="midText clear">
-							<h2 class="section-title"><?php echo $bottom_section_description; ?></h2>
+							<?php echo $bottom_section_description; ?>
 						</div>
 						<?php } ?>
 						<?php if($bottom_section_button_text && $bottom_section_button_link) { ?>

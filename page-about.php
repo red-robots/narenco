@@ -127,7 +127,7 @@ get_header(); ?>
 		?>
 		<section id="values" class="section-inner core-values">
 			<?php if($values_title) { ?>
-			<div class="titlediv text-center"<?php echo $values_style;?>>
+			<div class="titlediv text-center overlayBg"<?php echo $values_style;?>>
 				<div class="mid clear"><h2 class="title"><?php echo $values_title; ?></h2></div>
 			</div>
 			<?php } ?>
@@ -288,7 +288,7 @@ get_header(); ?>
 		?>
 		<section id="community" class="section-inner community">
 			<?php if($community_title) { ?>
-			<div class="titlediv text-center"<?php echo $community_style;?>>
+			<div class="titlediv text-center overlayBg"<?php echo $community_style;?>>
 				<div class="mid clear"><h2 class="title"><?php echo $community_title; ?></h2></div>
 			</div>
 			<?php } ?>
