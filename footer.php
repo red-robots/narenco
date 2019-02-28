@@ -42,7 +42,7 @@
 		</div><!-- wrapper -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<div class="ml-loader-wrap"><div class="ml-loader"> <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>       
 <a href="#" id="scrollTop" class="scrollTop"><i class="fa fa-long-arrow-up arrowUp" aria-hidden="true"></i></a>
 <?php wp_footer(); ?>
 

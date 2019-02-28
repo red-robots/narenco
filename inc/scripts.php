@@ -32,6 +32,10 @@ function acstarter_scripts() {
 		true 
 	);
 
+	wp_localize_script( 'acstarter-custom', 'frontajax', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' )
+	));
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

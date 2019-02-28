@@ -238,9 +238,10 @@ get_header(); ?>
 							<?php while ( $items->have_posts() ) : $items->the_post();
 								$staff_name = get_the_title(); 
 								$job_title = get_field('title'); 
-								$pagelink = get_permalink(); ?>
+								$pagelink = get_permalink(); 
+								$team_id = get_the_ID(); ?>
 							<div class="teamdiv">
-								<a class="team" href="<?php echo $pagelink; ?>">
+								<a class="team popupInfo" data-id="<?php echo $team_id; ?>" href="<?php echo $pagelink; ?>">
 									<span class="name">
 										<?php echo $staff_name; ?>
 										<?php if($job_title) { ?>

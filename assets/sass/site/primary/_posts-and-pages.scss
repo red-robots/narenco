@@ -1021,7 +1021,7 @@
 	background: $color-grey;
 	color: #FFF;
 	&:hover {
-		background: #525151;
+		background: $color-lime-green;
 	}
 }
 .section-inner.core-values .wrapper {
@@ -1082,6 +1082,9 @@
 		@media screen and (min-width: $midwidth) {
 			height: 260px;
 		}
+		@media screen and (min-width: $deskwidth) {
+			height: 280px;
+		}
 	}
 	.team {
 		box-sizing: border-box;
@@ -1090,6 +1093,7 @@
 		background: $color-grey;
 		color: #FFF;
 		text-align: center;
+		width: 100%;
 		height: 100%;
 		padding: 20px;
 		line-height: 1.2;
@@ -1641,5 +1645,134 @@
 	}
 
 }
+.single-page-info {
+	padding-top: 50px;
+	padding-bottom: 60px;
+}
+.content-with-image {
+	.content-left {
+		margin-bottom: 30px;
+		@media screen and (min-width: $tabwidth) {
+			margin-bottom: 0;
+		}
+		p {
+			margin-top: 0;
+		}
+	}
+	.content-left.has-image {
+		@media screen and (min-width: $tabwidth) {
+			width: 67%;
+			float: left;
+		}
+	}
+	.content-right {
+		@media screen and (min-width: $tabwidth) {
+			width: 28%;
+			float: right;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 15px;
+		}
+	}
+	.header-info {
+		margin-bottom: 30px;
+	}
+	.header-info .post-title {
+		font-weight: 400;
+    	font-size: 28px;
+    	line-height: 1.2;
+		margin: 0 0;
+		color: $color-lime-green;
+	}
+	.jobtitle {
+		margin: 0 0;
+		color: $color-lime-green;
+	}
 
+	.contact-info {
+		margin-bottom: 5px;
+	}
+	.contact-info * {
+		@include transition(all ease-out .3s);
+	}
+	.contact-info a {
+		display: inline-block;
+		color: $color-grey;
+		text-decoration: none;
+		position: relative;
+		padding-left: 22px;
+		font-size: 13px;
+		&:hover span.txt {
+			opacity: 0.5;
+		}
+	}
+	.contact-info .icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.popup_wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	padding: 4% 20px 4%;
+	box-sizing: border-box;
+	.popup-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(61,127,61,.95);
+	}
+	.closePopUp {
+		position: absolute;
+		top: -17px;
+    	right: -17px;
+		display: block;
+		width: 35px;
+		height: 35px;
+		border: 1px solid #FFF;
+		border-radius: 200px;
+		background: #000;
+		color: #FFF;
+		text-decoration: none;
+		text-align: center;
+		cursor: pointer;
+		@media screen and (min-width: $tabwidth) {
+			display: none;
+		}
+		span {
+			position: relative;
+			font-size: 20px;
+			top: 1px;
+			left: 1px;
+		}
+	}
+	.popup-inner {
+		max-width: 1000px;
+    	width: 100%;
+    	height: 100%;
+    	position: relative;
+    	z-index: 100;
+    	background: #FFF;
+    	margin: 0 auto;
+	}
+	.popup-outer-wrap {
+		width: 100%;
+    	height: 100%;
+    	overflow-x: hidden;
+    	overflow-y: auto;
+	}
+	.popup-pad {
+		padding: 30px;
+	}
+}
 

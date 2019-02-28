@@ -135,4 +135,38 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+
+    $('.popupInfo').on("click",function(e){
+    	e.preventDefault();
+		var post_id = $(this).attr('data-id');
+		$.ajax({
+			url : frontajax.ajaxurl,
+			type : 'post',
+			dataType : "json",
+			data : {
+				action : 'get_staff_details',
+				post_id : post_id
+			},
+			beforeSend:function(){
+				$(".ml-loader-wrap").show();
+			},
+			success : function( response ) {
+				if(response.content) {
+					var content = response.content;
+					$('body').prepend(content);
+					$('body').addClass('modal-open');
+					$(".ml-loader-wrap").hide();
+				} 
+			}
+		});
+	});
+
+	$(document).on("click","#popOverlay,.closePopUp",function(e){
+		e.preventDefault();
+		$(".popup_wrapper").fadeOut("normal",function(){
+			$(this).remove();
+		});
+		$('body').removeClass('modal-open');
+	});
+
 });// END #####################################    END

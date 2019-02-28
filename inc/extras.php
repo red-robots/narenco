@@ -315,6 +315,17 @@ function shortenText($string, $limit, $break=".", $pad="...") {
   return $string;
 }
 
+function format_phone_number($string) {
+    if(empty($string)) return '';
+    $append = '';
+    if (strpos($string, '+') !== false) {
+        $append = '+';
+    }
+    $string = preg_replace("/[^0-9]/", "", "705-666-8888" );
+    $string = preg_replace('/\s+/', '', $string);
+    return $append.$string;
+}
+
 /* Fixed Gravity Form Conflict Js */
 add_filter("gform_init_scripts_footer", "init_scripts");
 function init_scripts() {
@@ -375,3 +386,61 @@ function sort_array_items($array, $key, $sort='DESC') {
     return $items;
 }
 
+
+function my_custom_admin_head() { ?>
+    <style type="text/css">
+        body.post-type-team #postimagediv h2.hndle span {
+            display: none;
+        }
+        body.post-type-team #postimagediv h2.hndle:before {
+            content:"Staff Photo";
+            display: inline-block;
+        }
+        body.post-type-team #postimagediv a {
+            position: relative;
+        }
+        body.post-type-team #postimagediv a#set-post-thumbnail,
+        body.post-type-team #postimagediv a#remove-post-thumbnail {
+            color: transparent;
+        }
+        body.post-type-team #postimagediv a#set-post-thumbnail:before {
+            content:"Add Staff Photo";
+            display: inline-block;
+            position: absolute;
+            color: #0073aa!important;
+            text-decoration: underline;
+        }
+        body.post-type-team #postimagediv p.hide-if-no-js img {
+            position: relative;
+            z-index: 10;
+        }
+        body.post-type-team #postimagediv a#remove-post-thumbnail:before {
+            content:"Remove Photo";
+            display: inline-block;
+            position: absolute;
+            color: #0073aa!important;
+            text-decoration: underline;
+        }
+    </style>
+<?php    
+}
+add_action( 'admin_head', 'my_custom_admin_head' );
+
+
+/* Get Staff Details by Ajax */
+add_action( 'wp_ajax_nopriv_get_staff_details', 'get_staff_details' );
+add_action( 'wp_ajax_get_staff_details', 'get_staff_details' );
+function get_staff_details() {
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+        $post_id = ($_POST['post_id']) ? $_POST['post_id'] : 0;
+        $html = staff_info_html($post_id,true);
+        $response['content'] = $html;
+        echo json_encode($response);
+    }
+    else {
+        header("Location: ".$_SERVER["HTTP_REFERER"]);
+    }
+    die();
+}
+
+require get_template_directory() . '/template-parts/content-staff-info.php';
