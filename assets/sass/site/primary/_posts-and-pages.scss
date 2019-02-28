@@ -721,7 +721,7 @@
 		@include gradient-green();
 		@include transition (all ease-out .3s);
 		&:hover {
-			opacity: 0.6;
+			background: $color-lime-green;
 		}
 	}
 	.button .btn2 {
@@ -1043,6 +1043,9 @@
 	.button a {
 		background: $color-grey;
 		color: #FFF;
+		&:hover {
+			background: $color-lime-green;
+		}
 	}
 	.bottomText {
 		font-weight: 300;

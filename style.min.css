@@ -2004,7 +2004,7 @@ body.modal-open{overflow:hidden}
 .section-inner .section-title{margin-bottom:35px}
 .section-inner .button{margin-top:40px}
 .section-inner .button a{display:inline-block;font-size:22px;font-weight:200;text-decoration:none;color:#FFF;padding:6px 30px;background:#4b8a3e;background:-webkit-linear-gradient(left,#4b8a3e 0,#a1cc3e 100%);background:linear-gradient(to right,#4b8a3e 0,#a1cc3e 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b8a3e',endColorstr='#a1cc3e',GradientType=1);-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.section-inner .button a:hover{opacity:.6}
+.section-inner .button a:hover{background:#94c33e}
 .section-inner .button .btn2{font-size:18px;padding:10px 40px}
 .section-inner .titlediv{position:relative;height:150px;background-size:cover;background-position:top center;background-repeat:no-repeat}
 @media screen and (min-width:600px){.section-inner .titlediv{height:280px}
@@ -2066,6 +2066,7 @@ body.modal-open{overflow:hidden}
 .med-width,.section-title.med-width{max-width:710px;width:100%;margin:0 auto 30px}
 .section-inner.leadership .section-text{margin-top:50px}
 .section-inner.leadership .button a{background:#828282;color:#FFF}
+.section-inner.leadership .button a:hover{background:#94c33e}
 .section-inner.leadership .bottomText{font-weight:300}
 .section-inner.leadership .section-title.med-width{display:inline-block;margin-bottom:15px}
 .departments{margin-top:80px}
