@@ -642,7 +642,16 @@
 		height: 220px;
 	}
 	@media screen and (min-width: $midwidth) {
-		height: 280px;
+		height: 320px;
+	}
+	@media screen and (min-width: $largewidth) {
+		height: 380px;
+	}
+	@media screen and (min-width: $xlargewidth) {
+		height: 420px;
+	}
+	@media screen and (min-width: $xxlargewidth) {
+		height: 500px;
 	}
 	.bannerImage {
 		background-size: cover;
@@ -699,7 +708,8 @@
 	font-weight: 600;
 }
 .section-inner {
-	font-size: 18px;
+	// font-size: 18px;
+	font-size: 22px;
 	font-weight: 200;
 	.wrapper {
 		padding-top: 60px;

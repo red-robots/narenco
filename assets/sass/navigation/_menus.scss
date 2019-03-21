@@ -4,7 +4,7 @@
 }
 .main-navigation {
 	display: none;
-	@media screen and (min-width: $tabwidth) {
+	@media screen and (min-width: $midwidth) {
 		display: block;
 		clear: none;
 		width: 100%;
@@ -83,7 +83,7 @@
 	display: block;
 	position: relative;
 	z-index: 2000;
-	@media screen and (min-width: $tabwidth) {
+	@media screen and (min-width: $midwidth) {
 		display: none;
 	}
 	.menu-main-menu-container {
@@ -160,6 +160,20 @@
 	padding: 0 0;
 	text-align: center;
 }
+body.homepage {
+	.burger {
+		i, i:before, i:after {
+			background-color: #FFF;
+		}
+	}
+}
+body.subpage {
+	.burger {
+		i, i:before, i:after {
+			background-color: #333;
+		}
+	}
+}
 .mobile-navigation .burger {
 	display: block;
 	cursor: pointer;
@@ -185,7 +199,7 @@
 		display: block;
 		width: 30px;
 		height: 3px;
-		background-color: #FFF;
+		
 		@include transition(all ease-out .3s);
 	}
 	i:before, i:after {
@@ -193,7 +207,6 @@
 	    content: "";
 	    width: 30px;
 	    height: 3px;
-	    background-color: #FFF;
 	    left: 0;
 	    transition-property: background-color, -webkit-transform;
 	    -webkit-transition-property: background-color, -webkit-transform;
