@@ -18,13 +18,15 @@ if ( $items->have_posts() ) { ?>
 				$proj_name = get_the_title();
 				$project_details = get_field('project_details');
 				//$project_details = get_field('size');
-				$categories = get_the_terms($proj_id,'project_categories'); ?>
-
+				$categories = get_the_terms($proj_id,'project_categories'); 
+				$square_img = get_bloginfo("template_url") . '/images/square.png';
+				$imgAtt = ($proj_image_src) ? ' style="background-image:url('.$proj_image_src.')"':''; ?>
 				<a class="box" href="<?php echo $proj_link;?>">
 					<span class="inside clear">
-						<span class="imagewrap">
+						<span class="imagewrap"<?php echo $imgAtt ?>>
+							<img class="px" src="<?php echo $square_img ?>" alt="" aria-hidden="true">
 							<?php if($proj_image_src) { ?>
-								<img src="<?php echo $proj_image_src; ?>" alt="<?php echo $proj_image_alt; ?>" />
+								<img class="thumb" src="<?php echo $proj_image_src; ?>" alt="<?php echo $proj_image_alt; ?>" />
 							<?php } ?>
 							<span class="projectname">
 								<span><?php echo $proj_name; ?></span>
