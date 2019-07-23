@@ -2094,7 +2094,7 @@ body.modal-open{overflow:hidden}
 @media screen and (min-width:600px){.departments .jobtitle{font-size:2vw}
 }@media screen and (min-width:920px){.departments .jobtitle{font-size:20px}
 }.departments .readmore{display:inline-block;width:100%;text-align:center;overflow:hidden;opacity:0;visibility:hidden}
-.departments .readmore i{display:inline-block;padding:5px 12px;color:#94c33e;background:#FFF;text-transform:none;font-size:16px;font-style:normal}
+.departments .readmore i{display:inline-block;padding:5px 12px;color:#94c33e;background:#FFF;text-transform:none;font-size:16px;font-weight:300;font-style:normal}
 .departments .team:hover .greenbg{opacity:1;visibility:visible}
 .departments .team:hover .name{top:48%;-webkit-transform:translateY(-48%);-ms-transform:translateY(-48%);transform:translateY(-48%)}
 .departments .team:hover .readmore{display:inline-block;opacity:1;visibility:visible}
