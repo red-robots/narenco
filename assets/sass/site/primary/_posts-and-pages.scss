@@ -371,7 +371,10 @@
 		line-height: 1.2;
 		font-weight: 200;
 		@media screen and (min-width: $tabwidth) {
-			font-size: 23px;
+			font-size: 22px;
+		}
+		@media screen and (min-width: $midwidth) {
+			font-size: 25px;
 		}
 	}
 	.category i:first-child {
@@ -1578,6 +1581,10 @@
 		display: inline-block;
 		float: left;
 		margin-right: 3px;
+	}
+	.text-content {
+		font-size: 18px;
+		font-weight: 400;
 	}
 }
 .specifications {

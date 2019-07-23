@@ -1,5 +1,8 @@
 <?php
-get_header(); ?>
+get_header(); 
+global $post;
+$current_link = get_permalink($post->ID);
+?>
 
 <div id="primary" class="full-content-area default-temp clear single-project-page">
 	<main id="main" class="site-main wrapper" role="main">
@@ -66,17 +69,22 @@ get_header(); ?>
 
 			// Identify the position of the current product within the $posts-array 
 			$current = array_search(get_the_ID(), $posts);
-
+			$index = $current-1;
+			$key = ($index>0) ? $index : 0;
 			// Identify ID of previous product
-			$prevID = $posts[$current-1];
+			$prevID = ( isset($posts[$key]) && $posts[$key] ) ? $posts[$key] : '';
 
 			// Identify ID of next product
-			$nextID = $posts[$current+1];
+			$nextID = ( isset($posts[$current+1]) && $posts[$current+1] ) ? $posts[$current+1] : '';
+			$prevLink = (!empty($prevID)) ? get_permalink($prevID) : '';
+			$showPrevLink = ($prevLink==$current_link) ?  false : true;
 
 			// Link "previous product"
-			if (!empty($prevID)) { ?>
-			<a class="prev" href="<?php echo get_permalink($prevID); ?>">&lt; Previous Project</a>
-			<?php }
+			if ($showPrevLink) {
+				if (!empty($prevID)) { ?>
+				<a class="prev" href="<?php echo get_permalink($prevID); ?>">&lt; Previous Project</a>
+				<?php }
+			}
 			// Link "next product"
 			if (!empty($nextID)) { ?>
 			<a class="next" href="<?php echo get_permalink($nextID); ?>">Next Project &gt;</a>
