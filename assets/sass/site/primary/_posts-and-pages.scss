@@ -1085,11 +1085,17 @@
 			@include flexbox-align-content(top);
 			@include flexbox-align-items(top);
 			@include flexbox-direction(row);
+			@include flexbox-justify(center);
 		}
 	}
 	.dept {
 		margin-bottom: 40px;
 	}
+	// .box-center .dept-row {
+	// 	@media screen and (min-width: $tabwidth) {
+	// 		@include flexbox-justify(center);
+	// 	}
+	// }
 	.teamdiv {
 		box-sizing: border-box;
 		padding: 5px 10px;

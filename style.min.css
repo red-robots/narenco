@@ -2078,7 +2078,7 @@ body.modal-open{overflow:hidden}
 .section-inner.leadership .section-title.med-width{display:inline-block;margin-bottom:15px}
 .departments{margin-top:80px}
 .departments .dept-row{margin-left:-10px;margin-right:-10px}
-@media screen and (min-width:600px){.departments .dept-row{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:top;-ms-flex-line-pack:top;align-content:top;-webkit-align-items:top;-webkit-box-align:top;-ms-flex-align:top;align-items:top;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
+@media screen and (min-width:600px){.departments .dept-row{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-align-content:top;-ms-flex-line-pack:top;align-content:top;-webkit-align-items:top;-webkit-box-align:top;-ms-flex-align:top;align-items:top;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }.departments .dept{margin-bottom:40px}
 .departments .teamdiv{box-sizing:border-box;padding:5px 10px;height:180px;margin-bottom:20px}
 @media screen and (min-width:600px){.departments .teamdiv{padding:10px 10px;width:32.333%;float:left;height:220px;margin-bottom:0}
