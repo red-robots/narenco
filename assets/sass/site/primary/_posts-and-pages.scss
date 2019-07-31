@@ -1345,6 +1345,18 @@
 			font-size: 45px;
 		}
 	}
+	.intro .wrapper.text-center p:first-child {
+		margin-top: 0;
+	}
+	.intro .wrapper.text-center p {
+		margin-top: 1.2em;
+		margin-bottom: 0;
+	}
+	.intro .wrapper.text-center {
+		.project-button {
+			margin-top: 1.5em;
+		}
+	}
 }
 .flex-container {
 	.row {

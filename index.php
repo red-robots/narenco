@@ -97,6 +97,7 @@ get_header(); ?>
 				<?php if($projects_description) { ?>
 					<div class="projects_description clear animated fadeInUp wow" data-wow-delay=".4s"><?php echo $projects_description; ?></div>
 				<?php } ?>	
+
 				<?php if($featuredProjects) { ?>
 					<div class="featured-projects clear animated fadeIn wow" data-wow-delay=".5s">
 						<div class="row clear">
@@ -111,13 +112,16 @@ get_header(); ?>
 							//$project_details = get_field('size',$proj_id);
 							$project_details = get_field('project_details',$proj_id);
 							$categories = get_the_terms($proj_id,'project_categories');
+							$square_img = get_bloginfo("template_url") . '/images/square.png';
+							$istyles = ($proj_image_src) ? ' style="background-image:url('.$proj_image_src.')"':'';
 							$sec = $i+1;
 							?>
 							<a class="box" href="<?php echo $proj_link;?>">
 								<span class="inside clear">
-									<span class="imagewrap">
+									<span class="imagewrap"<?php echo $istyles ?>>
+										<img class="px" src="<?php echo $square_img ?>" alt="" aria-hidden="true">
 										<?php if($proj_image_src) { ?>
-											<img src="<?php echo $proj_image_src; ?>" alt="<?php echo $proj_image_alt; ?>" />
+											<img src="<?php echo $proj_image_src; ?>" alt="<?php echo $proj_image_alt; ?>" style="display:none;"/>
 										<?php } ?>
 										<span class="projectname">
 											<span><?php echo $proj_name; ?></span>

@@ -40,7 +40,33 @@ get_header(); ?>
 				<div class="row clear">
 					<?php foreach($columns as $col) { 
 						$c_title = $col['title'];
-						$c_text = $col['description']; ?>
+						$c_text = $col['description']; 
+						$strEmails = ($c_text) ? extract_email_from_string($c_text) : '';
+						$emailsArr = array();
+						if($strEmails) {
+							foreach($strEmails as $emails) {
+								if($emails) {
+									$emails = array_unique($emails);
+									foreach($emails as $em) {
+										if (filter_var($em, FILTER_VALIDATE_EMAIL)) {
+											$emailsArr[] = $em;
+										}
+									}
+								}
+							}
+						}
+						if($emailsArr) {
+							foreach($emailsArr as $e) {
+								$spambotEmail = antispambot($e,1);
+								$find = "mailto:".$e;
+								$replace = "mailto:".$spambotEmail;
+								$find2 = $e.'</a>';
+								$replace2 = antispambot($e).'</a>';
+								$c_text = str_replace($find,$replace,$c_text);
+								$c_text = str_replace($find2,$replace2,$c_text);
+							}
+						}
+						?>
 						<div class="textcol text-center">
 							<?php if($c_title) { ?>
 								<div class="title"><?php echo $c_title; ?></div>

@@ -443,4 +443,11 @@ function get_staff_details() {
     die();
 }
 
+function extract_email_from_string($string = '') {
+    $pattern = '/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i';
+    preg_match_all($pattern, $string, $aMatch);
+    //$aMatch = array_keys(array_flip(current($aMatch)));
+    return $aMatch;
+}
+
 require get_template_directory() . '/template-parts/content-staff-info.php';
